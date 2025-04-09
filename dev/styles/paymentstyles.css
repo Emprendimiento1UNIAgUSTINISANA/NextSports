@@ -1,0 +1,12 @@
+main {
+    font-family: Roboto, sans-serif;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+}
+ul {
+    list-style-type: none;
+    width: 100%;
+    
+}
