@@ -1,0 +1,193 @@
+/* Asegurar que la página ocupe toda la altura de la ventana */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
+    background-color: #f9f9f9;
+}
+/* Encabezado */
+header {
+    position: relative;
+    width: 100%;
+    height: 250px;
+}
+
+header .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-actions {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between; /* Separa los botones */
+    padding: 0 20px; /* Espaciado lateral */
+    align-items: center;
+}
+
+.user-actions button {
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.user-actions button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Sección principal */
+.Principal_section {
+    flex: 1; /* Permite que esta sección crezca para ocupar el espacio disponible */
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    margin-top: -30px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Alinear el contenido de .cancha */
+.cancha {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Mantiene el título y ubicación alineados a la izquierda */
+    position: relative; /* Permite posicionar el precio a la derecha */
+}
+
+.cancha h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.cancha p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.cancha p strong {
+    color: #ff9900;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    right: 0; /* Alinea el precio a la derecha */
+}
+
+/* Botones alineados horizontalmente y sin borde */
+.cancha .options {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 20px; /* Espaciado entre los botones */
+    margin-top: 15px;
+}
+
+.button-options {
+    display: flex;
+    flex-direction: row; /* Ícono y texto en línea horizontal */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+    gap: 10px; /* Espaciado entre el ícono y el texto */
+    background-color: white; /* Fondo blanco */
+    border: none; /* Elimina el borde */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación */
+}
+
+.button-options:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.button-options img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Galería */
+.Galery {
+    margin-top: 20px;
+}
+
+.Galery_img {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.Galery_img li {
+    list-style: none;
+}
+
+.Galery_img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Botones de reserva */
+.botton-reservation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.botton-reservation-content button {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.botton-reservation-content button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Responsive tarjetas en móviles */
+@media (max-width: 768px) {
+    .cancha,
+    .options {
+        width: 250px;
+        flex: 0 0 auto;
+    }
+
+    .button-options {
+        flex-wrap: wrap;
+    }
+}
