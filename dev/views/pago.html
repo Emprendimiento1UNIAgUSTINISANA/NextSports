@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/dev/styles/paymentstyles.css">
 </head>
 <body>
-    <main>
+    <header>
         <nav>
             <ul>
                 <li><img src="" alt=""></li>
@@ -15,61 +15,75 @@
                 <li><img src="" alt=""></li>
             </ul>
         </nav>
-        <article class="info_payment">
+    </header>
+    <br><br>
+    <main>
+        <section class="info_payment">
             <h1>resumen reserva</h1>
             <hr>
-            <section>
-                <div>
-                    <p>Cancha</p>
-                    <p id="court_type"></p>
-                </div>
-                <div>
-                    <p>Fecha</p>
-                    <p id="court_date"></p>
-                </div> 
-                <div>
-                    <p>Hora</p>
-                    <p id="court_time"></p>
-                </div>
-                <div>
-                    <p>Duración</p>
-                    <p id="court_duration"></p>
-                </div>
-            </section>
+            <div>
+                <p>Cancha</p>
+                <p id="court_type">nombre</p>
+            </div>
+            <div>
+                <p>Fecha</p>
+                <p id="court_date">00/00/0000</p>
+            </div> 
+            <div>
+                <p>Hora</p>
+                <p id="court_time">00:00 - 00:00</p>
+            </div>
+            <div>
+                <p>Duración</p>
+                <p id="court_duration">0 horas</p>
+            </div>
             <hr>
             <h1>Total a pagar</h1>
             <div>
                 <p>Total a pagar</p>
-                <p id="court_price"></p>
+                <p id="court_price">$00.00,00</p>
             </div>
-        </article>
-        <article id="payment_methods">
+        </section>
+        <br><br>
+        <section class="payment_methods">
             <h1>Metodos de pago</h1>
             <hr>
             <form method="post" id="payment_methods_form">
                 <label>
-                    <input type="checkbox" name="tarjeta" id="tarjeta">
+                    <input type="radio" name="tarjeta" id="tarjeta">
+                    tarjeta credito/debito
                 </label>
                 <label>
-                    <input type="checkbox" name="tarjeta" id="paypal">
+                    <input type="radio" name="tarjeta" id="paypal">
+                    paypal -- [en desarrollo]
                 </label>
                 <label>
-                    <input type="checkbox" name="tarjeta" id="transferencia">
+                    <input type="radio" name="tarjeta" id="transferencia">
+                    transferencia bancaria -- [en desarrollo]
                 </label>
             </form>
-            <form method="post" id="payment_methods_form">
-                <label for="card_number">Numero de tarjeta</label>
-                <input type="text" id="card_number" name="card_number" required placeholder="XXXX-XXXX-XXXX-XXXX">
-                <br><br>
-                <label for="card_expiration">Fecha de expiracion</label>
-                <input type="text" id="card_expiration" name="card_expiration" required placeholder="MM/AA">
-                <br><br>
-                <label for="card_cvc">CVC</label>
-                <input type="text" id="card_cvc" name="card_cvc" required placeholder="XXX">
-                <br><br>
-                <button type="submit">Pagar</button>
+            <form method="post" id="payment_card_form">
+                <h2>detalles de tarjeta</h2>
+                <div class="card_number">
+                    <input type="text" id="card_number" name="card_number" required placeholder="numero de tarjeta">
+                </div>
+                <div class="card_data">
+                    <input type="text" id="card_expiration_date" name="card_expiration_date" required placeholder="MM/AA">
+                    <input type="text" id="card_cvc" name="card_cvv" required placeholder="CVV">
+                </div>
+                <div class="holder_name">
+                    <input type="text" id="holder_name" name="holder_name" required placeholder="nombre del titular">
+                </div>
+                <div class="save_card">
+                    <label for="save_card" >
+                        <input type="radio" id="save_card" name="save_card"required>
+                        acepto los terminos y condiciones
+                    </label>
+                </div>
+                <button type="submit">Enviar</button>
             </form>
-        </article>
+        </section>
+        <br><br>
     </main>
 </body>
 </html>
