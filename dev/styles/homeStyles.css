@@ -1,0 +1,259 @@
+/* Reset básico */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(to bottom, #00bfff, #00e676);
+    color: white;
+    padding: 60px 20px 40px;
+    position: relative;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+/* Botones de usuario en la parte superior derecha */
+.user-actions {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.user-actions button {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 14px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.user-actions button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.user-name {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 4px;
+}
+
+.search-title {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.option {
+    width: 120px;
+    height: 120px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Ajuste general de imágenes */
+.cancha img,
+.cancha-popular img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.cancha:hover img,
+.cancha-popular:hover img {
+    transform: scale(1.05);
+}
+
+/* Cartas de canchas con animación como botones */
+.cancha,
+.cancha-popular {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cancha:hover,
+.cancha-popular:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+/* Sección "Justo para ti" */
+.just-for-you {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.just-for-you h2{
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+.canchas {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Cartas de cancha: diseño y animación */
+.cancha,
+.cancha-popular {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    flex: 1;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cancha:hover,
+.cancha-popular:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajuste de imágenes de cartas */
+.cancha img,
+.cancha-popular img {
+    width: 100%;
+    height: 200px; /* Altura fija para uniformidad */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.rating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.cancha figcaption,
+.cancha-popular figcaption {
+    margin-top: 10px;
+}
+
+.features {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.features li {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.view-more {
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    float: right;
+}
+
+/* Sección "Populares" */
+.popular {
+    background-color: white;
+    padding: 20px;
+}
+
+.popular h2 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.canchas-populares {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.ver-mas-wrapper {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.ver-mas-link {
+    color: #00bfff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.ver-mas-link:hover {
+    color: #007acc;
+    text-decoration: underline;
+}

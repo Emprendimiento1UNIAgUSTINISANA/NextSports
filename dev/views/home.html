@@ -1,50 +1,136 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="icon" href="/dev/img/Icon-stand-alone.svg" type="/imagenes"><!--Icono de la pagina-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextSport</title>
+    <title>Plataforma de Canchas de Fútbol</title>
+    <link rel="stylesheet" href="/dev/styles/homeStyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<section> <!--Seccion principal-->
-    <div class="contenedorPrincipal" id="contenedorPrincipal">
-        <img src="/dev/img/Icon-stand-alone.svg" alt="Logo de NextSport" class="logo"> <!--Logo de la pagina-->
-        <h1>NextSport</h1>
-        <p>La mejor plataforma para encontrar tu cancha ideal.</p>
-        <a href="/dev/views/login.html" class="boton">Iniciar Sesión</a> <!--Botón para iniciar sesión-->
-        <a href="/dev/views/registro.html" class="boton">Registrarse</a> <!--Botón para registrarse-->
-        <a href="/dev/views/perfil.html" class="boton">Ver Perfil</a> <!--Botón para ver perfil-->
-    </div>
-</section>
+    <!-- Encabezado -->
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="/dev/img/Icon-stand-alone.svg" alt="Logo" />
+        </div>
+        
 
-<!-- Section de busqueda -->
- <section class="busqueda">
-        <img src="" alt="">
-        <input type="text" placeholder="Buscar cancha, equipo o torneo" class="input-busqueda"> <!--Barra de busqueda-->
-        <button class="boton-busqueda">Buscar</button> <!--Botón de busqueda-->
- </section>
+        <!-- Botones en la parte superior derecha -->
+        <div class="user-actions">
+            <button class="login-btn">Iniciar Sesión o Registrarse</button>
+            <button class="profile-btn"><i class="fas fa-user"></i></button>
+        </div>
 
-<!-- Menu de Seleccionable -->
+        <div class="header-content">
+            <hgroup class="greeting">
+                <p class="user-name">Hola, Byron Canga</p>
+                <h2 class="search-title">¿Qué estás buscando?</h2>
+            </hgroup>
+            <nav class="options">
+                <a href="#" class="option rent-cancha">
+                    <img src="/dev/img/Vector.svg" alt="Rentar Cancha">
+                    <span>Rentar Cancha</span>
+                </a>
+                <a href="#" class="option tournaments">
+                    <img src="/dev/img/cup.svg" alt="Torneos">
+                    <span>Torneos</span>
+                </a>
+                <a href="#" class="option map">
+                    <img src="/dev/img/map.png" alt="Mapa">
+                    <span>Mapa</span>
+                </a>
+            </nav>
+        </div>
+    </header>
 
-<nav class="Menu_Seleccionable">
-    <ul class="Menu">
-        <li class="Menu1"><img src="" alt=""><a href="" class="boton">Reservar canchas</a></li> <!--Botón para buscar cancha-->
-        <li class="Menu2"><img src="" alt=""><a href="" class="boton">Torneos</a></li> <!--Botón para buscar partido-->
-        <li class="Menu3"><img src="" alt=""><a href="" class="boton">Mapa</a></li> <!--Botón para buscar equipo-->
-        <li class="Menu4"><img src="" alt=""><a href="" class="boton">Equipos</a></li> <!--Botón para buscar cancha-->
-    </ul>
-</nav>
-
-<!-- Menu de Seleccionable -->
-
-<section class="Menu_Cancha_Serca">
-    <div class="MenuCancha1"> 
-        <article>
-
+    <!-- Sección "Justo para ti" -->
+    <section class="just-for-you">
+        <h2>Justo para ti</h2>
+        <article class="canchas">        
+            <figure class="cancha">                
+                <img src="/dev/img/Donbalon.png" alt="Don Balón">
+                <figcaption>
+                    <span class="rating">★ 4.4</span>
+                    <h3>Don Balón</h3>
+                    <p><strong>$50000</strong></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Soacha, Cundinamarca</p>
+                    <ul class="features">
+                        <li><i class="fas fa-futbol"></i> 3 Canchas</li>
+                        <li><i class="fas fa-wifi"></i> Wifi</li>
+                        <li><i class="fas fa-car"></i> Garage</li>
+                    </ul>
+                </figcaption>
+            </figure>
+            <figure class="cancha">
+                <img src="/dev/img/CanchasSinteticas.jpg" alt="Canchas Sintéticas">
+                <figcaption>
+                    <span class="rating">★ 4.3</span>
+                    <h3>Canchas Sintéticas</h3>
+                    <p><strong>$45000</strong></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+                    <ul class="features">
+                        <li><i class="fas fa-futbol"></i> 2 Canchas</li>
+                        <li><i class="fas fa-wifi"></i> Wifi</li>
+                        <li><i class="fas fa-car"></i> Garage</li>
+                    </ul>
+                </figcaption>
+            </figure>
+            <figure class="cancha">
+                <img src="/dev/img/Soccer7.jpg" alt="Super Soccer 7">
+                <figcaption>
+                    <span class="rating">★ 4.5</span>
+                    <h3>Super Soccer 7</h3>
+                    <p><strong>$40000</strong></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+                    <ul class="features">
+                        <li><i class="fas fa-futbol"></i> 6 Canchas</li>
+                        <li><i class="fas fa-wifi"></i> Wifi</li>
+                    </ul>
+                </figcaption>
+            </figure>
         </article>
-    </div>
-</section>
+        </div> <!-- canchas-populares -->
+        <div class="ver-mas-wrapper">
+            <a href="#" class="ver-mas-link">Ver más</a>
+        </div>
+        </div> <!-- popular -->    
+    </section>
+
+    <!-- Sección "Populares" -->
+    <section class="popular">
+        <h2>Populares</h2>
+        <article class="canchas-populares">
+            <figure class="cancha-popular">
+                <img src="/dev/img/Canchas8.jpg" alt="CANCHA DE Futbol 8">
+                <figcaption>
+                    <span class="rating">★ 4.5</span>
+                    <h3>CANCHA DE Futbol 8</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+                    <p><strong>$60000</strong></p>
+                    <ul class="features">
+                        <li><i class="fas fa-futbol"></i> 3 Canchas</li>
+                        <li><i class="fas fa-wifi"></i> Wifi</li>
+                        <li><i class="fas fa-car"></i> Garage</li>
+                    </ul>
+                </figcaption>
+            </figure>
+            <figure class="cancha-popular">
+                <img src="/dev/img/Canchas8.jpg" alt="CANCHA DE Futbol 11 y FA">
+                <figcaption>
+                    <span class="rating">★ 4.3</span>
+                    <h3>CANCHA DE Futbol 11 y FA</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+                    <p><strong>$55550</strong></p>
+                    <ul class="features">
+                        <li><i class="fas fa-futbol"></i> 2 Canchas</li>
+                        <li><i class="fas fa-wifi"></i> Wifi</li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </article>
+    </section>
 </body>
 </html>
 
