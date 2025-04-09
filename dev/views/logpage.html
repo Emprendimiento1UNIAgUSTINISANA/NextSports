@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/dev/styles/logpagestyles.css">
+</head>
+<body>
+    <main>
+        <section class="container_log"> <!--Contenedor para el formulario de log in-->
+            <img src="/dev/img/login-icon.svg" alt="logo NextSport" width="90%" height="300px"> 
+            <form id="login" action="login" method="post"> <!--Formulario para login-->
+                <label for="username">Ingresa tu correo:</label>
+                <input type="text" id="username" name="username" required> <!--input ingresar datos usuario existente-->
+                <br><br>
+                <label for="password">ingresa tu Contraseña:</label>
+                <input type="password" id="password" name="password" required> <!--input ingresar contrasena a usuario asociado-->
+                <br><br>
+                <button type="submit"><a href="/dev/views/home.html">Incia sesion</a></button>
+            </form>
+            <br>
+            <button id="register_display_button" onclick="activate_Sign_up()">registrate</button> 
+        </section>
+        <br><br>
+        <section class="container_register"> <!--Contenedor para el formulario de registro-->
+            <img src="/dev/img/login-icon.svg" alt="logo NextSport" width="90%" height="300px">
+            <form id="register" action="register" method="post"> <!--Formulario para registro-->
+                <label for="new_username">Ingresa tu correo</label>
+                <input type="text" id="new_username" name="new_username" required> <!--input ingresar datos nuevo usuario-->
+                <br><br>
+                <label for="new_password">Ingresa tu contraseña</label>
+                <input type="password" id="new_password" name="new_password" required> <!--Input ingresar datos nueva contrasena-->
+                <br><br>
+                <label for="new_password">confirma tu contraseña</label>
+                <input type="password" id="confirm_password" name="confirm_password" required> <!--Input ingresar datos confirmar nueva contrasena-->
+                <br><br>
+                <button type="submit">Register</button> <!--Boton para registrar-->
+            </form>
+            <button id="login_display_button"onclick="activate_sign_in()"><</button> <!--Cambiar formulario register a log-->
+        </section>
+    </main>
+</body>
+<script src="/javascript/transitionlog.js"></script> <!--Llamar al script de la pagina-->
+</html>

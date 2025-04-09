@@ -1,0 +1,80 @@
+* { 
+    font-family: roboto, sans-serif;
+}
+main { /*Conenedor principal */
+    margin-top: 10px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+} 
+section { /*Contenedores principales: login y register */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    max-height: 670px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+form { /*Formulario de login y register */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+label {
+    align-self: flex-start;
+}
+input { /*Inputs de login y register */
+    width: 300px;
+    height: 35px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button { /*Boton de login y register */
+    width: 264px;
+    height: 49px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+} 
+.container_log {
+    visibility: visible;
+}
+.container_log button {
+    background-color: #A7D129;
+}
+.container_log #register_display_button {
+    background-color: #F0EEEE;
+}
+.container_register {
+    visibility: hidden;
+}
+.container_register button {
+    background-color: #A7D129;
+}
+.container_register #login_display_button {
+    width: min-content;
+    background-color: #F0EEEE;
+    align-self: flex-start;
+}
+.container_log, .container_register { /* posiciona contenedores de log y register en el mismo lugar */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 100%; 
+    max-width: 500px; 
+    max-height: 670px; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
