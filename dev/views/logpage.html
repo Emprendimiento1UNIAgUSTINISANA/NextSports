@@ -10,14 +10,14 @@
     <main>
         <section class="container_log"> <!--Contenedor para el formulario de log in-->
             <img src="/dev/img/login-icon.svg" alt="logo NextSport" width="90%" height="300px"> 
-            <form id="login" action="login" method="post"> <!--Formulario para login-->
+            <form id="login" onsubmit="redirectToHome(event)"> <!--Formulario para login-->
                 <label for="username">Ingresa tu correo:</label>
                 <input type="text" id="username" name="username" required> <!--input ingresar datos usuario existente-->
                 <br><br>
-                <label for="password">ingresa tu Contraseña:</label>
+                <label for="password">Ingresa tu Contraseña:</label>
                 <input type="password" id="password" name="password" required> <!--input ingresar contrasena a usuario asociado-->
                 <br><br>
-                <button type="submit"><a href="/dev/views/home.html">Incia sesion</a></button>
+                <button type="submit">Inicia sesión</button>
             </form>
             <br>
             <button id="register_display_button" onclick="activate_Sign_up()">registrate</button> 
@@ -42,4 +42,10 @@
     </main>
 </body>
 <script src="/javascript/transitionlog.js"></script> <!--Llamar al script de la pagina-->
-</html>
+<script>
+    function redirectToHome(event) {
+        event.preventDefault(); // Evita que el formulario se envíe
+        window.location.href = "/dev/views/home.html"; // Redirige a la página de inicio
+    }
+</script>
+</html> 
