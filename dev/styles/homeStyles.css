@@ -241,19 +241,55 @@ header {
     gap: 20px;
 }
 
+/* Scroll horizontal responsivo */
+.scroll-horizontal {
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+}
+
+.scroll-horizontal::-webkit-scrollbar {
+    display: none;
+}
+
+/* Alineación de títulos */
+.seccion-titulo {
+    text-align: left;
+    padding-left: 10px;
+    font-size: 1.5rem;
+}
+
+/* Ver más estilo link */
 .ver-mas-wrapper {
-    text-align: right;
-    margin-top: 10px;
+    padding: 10px;
+    text-align: left;
 }
 
 .ver-mas-link {
     color: #00bfff;
-    font-weight: bold;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 .ver-mas-link:hover {
-    color: #007acc;
+    color: #0099cc;
     text-decoration: underline;
+}
+
+/* Responsive tarjetas en móviles */
+@media (max-width: 768px) {
+    .cancha,
+    .cancha-popular {
+        width: 250px;
+        flex: 0 0 auto;
+    }
+
+    .features {
+        flex-wrap: wrap;
+    }
 }
