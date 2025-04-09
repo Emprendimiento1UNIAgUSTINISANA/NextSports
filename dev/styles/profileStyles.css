@@ -1,0 +1,184 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 60px;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.header-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Tarjeta de perfil */
+.profile-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #b3b3b3;
+    margin-right: 20px;
+}
+
+.profile-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.profile-email {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Sección de grupos */
+.section-group {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+    padding: 0 16px;
+}
+
+/* Tarjetas de opciones */
+.option-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 16px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.option-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    color: #fff;
+}
+
+/* Estilos para los iconos SVG */
+.option-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor; /* Adopta el color del contenedor padre */
+}
+
+.icon-placeholder {
+    font-size: 0.8rem;
+    color: inherit;
+}
+
+/* Colores de fondo para los diferentes tipos de iconos */
+.dollar-icon {
+    background-color: #2c3e50;
+}
+
+.notification-icon {
+    background-color: #3498db;
+}
+
+.user-icon {
+    background-color: #2ecc71;
+}
+
+.comment-icon {
+    background-color: #f39c12;
+}
+
+.security-icon {
+    background-color: #9b59b6;
+}
+
+.option-text {
+    flex-grow: 1;
+    font-size: 1rem;
+}
+
+.option-arrow {
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-arrow svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .profile-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .profile-name {
+        font-size: 1.1rem;
+    }
+    
+    .option-card {
+        padding: 12px;
+    }
+}
