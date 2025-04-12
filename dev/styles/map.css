@@ -1,0 +1,76 @@
+/* Reset básico */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+/*Encabezado*/
+header{
+    background: #507583;
+    padding: 2%;
+    text-align: center;
+}
+.buscador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+input{
+    border-radius: 15px;
+    text-align: center;
+    width: 50%;
+    padding: 5px;
+    color: black;
+    border-color: black;
+}
+.botonesfiltro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:5px;
+    gap: 5px;/*Para poder darle separacion a los objetos */ 
+    transition: all 0.3s ease;
+}
+button{
+    background-color: #50758357;
+    color:#507583;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.info-canchas{
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;/*Para poner los objetos uno debajo del otro*/
+    margin-top:;
+    gap: 10px;/*Para poder darle separacion a los objetos */ 
+    transition: all 0.3s ease;
+}
+.disponibleahora{
+    color: #16857B;
+
+}
+a{
+    padding: 10px 5%;
+    border-radius: 25px;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.verdetalles{
+    background-color: #507583 ;
+}
+.reservar{
+    background-color: #16857B;
+}
