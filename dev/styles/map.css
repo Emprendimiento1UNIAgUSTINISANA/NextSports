@@ -52,7 +52,7 @@ button{
     justify-content: center;
     align-items: left;
     flex-direction: column;/*Para poner los objetos uno debajo del otro*/
-    margin-top:;
+    margin-top:;/*para separar la descripcion de la pantalla*/
     gap: 10px;/*Para poder darle separacion a los objetos */ 
     transition: all 0.3s ease;
 }

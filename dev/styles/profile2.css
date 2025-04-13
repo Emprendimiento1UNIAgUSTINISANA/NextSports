@@ -1,0 +1,50 @@
+/* Reset básico */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+/*Encabezado*/
+.back-button {
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: none;
+    margin: 10px;
+}
+
+.header-title , h5, .Estadisticas{
+    color: darkgrey;
+    margin: 10px;
+}
+/*Informacion del jugador */
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;/*Para poner los objetos uno debajo del otro*/ 
+}
+.Estadisticas2{
+    border-radius: 15px;
+    background-color: rgba(169, 169, 169, 0.507);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    gap: 80px;/*Para poder darle separacion a los objetos */
+}
+.Estadisticas{
+    padding:12px;
+}
+.fotoperfil{
+    margin-top: 20px;
+    width: 500px; /* Ajusta el tamaño según sea necesario */
+    height: 500px;
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    object-fit: cover; /* Asegura que la imagen se ajuste correctamente dentro del círculo */
+}
