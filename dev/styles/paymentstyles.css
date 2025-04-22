@@ -27,6 +27,7 @@ section {
     padding-right: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
 }
 div {
     display: flex;
@@ -77,7 +78,7 @@ section #payment_card_form {
 }
 .save_card {
     position: relative;
-    top: 150px;
+    top: 170px;
 }
 .save_card input {
     margin-right: 10px;
@@ -101,3 +102,38 @@ section #payment_card_form {
     font-size: 16px;
     margin-top: 20px;
 }
+
+/* agrega estilos de los metodos de pago por pse y paypal */
+#payment_form {
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #A7D129;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid black 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+#payment_form button {
+    position: relative;
+    top: 150px;
+    background-color: #A7D129;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Ajustar los formularios de métodos de pago al 100% del ancho del section */
+#payment_card_form,
+#payment_form{
+    width: 100%; /* Ajustar al 100% del ancho del contenedor */
+    padding: 20px; /* Agregar un poco de espacio interno */
+    box-sizing: border-box; /* Incluir padding y bordes en el ancho total */
+}
+

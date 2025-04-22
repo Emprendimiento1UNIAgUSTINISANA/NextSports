@@ -20,7 +20,7 @@
     <br><br>
     <main>
         <section class="info_payment">
-            <h1>resumen reserva</h1>
+            <h1>Resumen reserva</h1>
             <hr>
             <div>
                 <p>Cancha</p>
@@ -47,44 +47,26 @@
         </section>
         <br><br>
         <section class="payment_methods">
-            <h1>Metodos de pago</h1>
+            <h1>Métodos de pago</h1>
             <hr>
             <form method="post" id="payment_methods_form">
                 <label>
-                    <input type="radio" name="tarjeta" id="tarjeta">
-                    tarjeta credito/debito
+                    <input type="radio" name="payment_method" id="tarjeta">
+                    Tarjeta crédito/débito
                 </label>
                 <label>
-                    <input type="radio" name="tarjeta" id="paypal">
-                    paypal -- [en desarrollo]
+                    <input type="radio" name="payment_method" id="paypal">
+                    PayPal
                 </label>
                 <label>
-                    <input type="radio" name="tarjeta" id="transferencia">
-                    transferencia bancaria -- [en desarrollo]
+                    <input type="radio" name="payment_method" id="transferencia">
+                    Transferencia bancaria
                 </label>
             </form>
-            <form method="post" id="payment_card_form">
-                <h2>detalles de tarjeta</h2>
-                <div class="card_number">
-                    <input type="text" id="card_number" name="card_number" required placeholder="numero de tarjeta">
-                </div>
-                <div class="card_data">
-                    <input type="text" id="card_expiration_date" name="card_expiration_date" required placeholder="MM/AA">
-                    <input type="text" id="card_cvc" name="card_cvv" required placeholder="CVV">
-                </div>
-                <div class="holder_name">
-                    <input type="text" id="holder_name" name="holder_name" required placeholder="nombre del titular">
-                </div>
-                <div class="save_card">
-                    <label for="save_card" >
-                        <input type="radio" id="save_card" name="save_card"required>
-                        acepto los terminos y condiciones
-                    </label>
-                </div>
-                <button type="submit">Enviar</button>
-            </form>
+            <div id="payment_method"></div>
         </section>
         <br><br>
     </main>
+    <script src="/dev/javascript/paymethod.js"></script>
 </body>
 </html>

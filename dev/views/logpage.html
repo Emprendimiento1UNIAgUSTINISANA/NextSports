@@ -22,7 +22,6 @@
       </form>
       <button id="register_display_button" onclick="activate_Sign_up()">Registrate</button> 
     </section>
-
     <section class="container_register">
       <img src="/dev/img/login-icon.svg" alt="logo NextSport" width="90%" height="300px">
       <form id="register" method="post">
@@ -39,7 +38,6 @@
       <button id="login_display_button" onclick="activate_sign_in()">Volver</button>
     </section>
   </main>
-
   <script src="/dev/javascript/transitionlog.js"></script>
   <script>
     // Mostrar u ocultar formularios
@@ -51,7 +49,6 @@
       document.querySelector('.container_register').style.display = 'none';
       document.querySelector('.container_log').style.display = 'block';
     }
-
     // Lógica de autenticación con localStorage
     document.getElementById('login').addEventListener('submit', function (e) {
       e.preventDefault();
@@ -60,24 +57,20 @@
       localStorage.setItem('user', JSON.stringify({ name, email }));
       window.location.href = '/dev/views/home.html';
     });
-
     document.getElementById('register').addEventListener('submit', function (e) {
       e.preventDefault();
       const name = document.getElementById('reg-name').value;
       const email = document.getElementById('reg-email').value;
       const pass = document.getElementById('reg-password').value;
       const confirm = document.getElementById('confirm-password').value;
-
       if (pass !== confirm) {
         alert('Las contraseñas no coinciden');
         return;
       }
-
       localStorage.setItem('user', JSON.stringify({ name, email }));
       window.location.href = '/dev/views/home.html';
     });
   </script>
-
 <script src="/dev/javascript/auth.js"></script>
 </body>
 </html>
