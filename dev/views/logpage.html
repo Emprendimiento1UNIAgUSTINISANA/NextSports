@@ -1,52 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="icon" href="/dev/img/Vector.svg" type="/imagenes">
-    <link rel="stylesheet" href="/dev/styles/logpagestyles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Registro</title>
+  <link rel="icon" href="/dev/img/Vector.svg" type="/imagenes">
+  <link rel="stylesheet" href="/dev/styles/logpagestyles.css">
 </head>
 <body>
-    <main>
-        <section class="container_log"> <!--Contenedor para el formulario de log in-->
-            <img src="/dev/img/login-icon.svg" alt="logo NextSport" width="90%" height="300px"> 
-            <form id="login" onsubmit="redirectToHome(event)" method="post"> <!--Formulario para login-->
-                <label for="username">Ingresa tu correo:</label>
-                <input type="email" id="username" name="username" required placeholder="mail@example.com"> <!--input ingresar datos usuario existente-->
-                <br><br>
-                <label for="password">Ingresa tu Contraseña:</label>
-                <input type="password" id="password" name="password" required placeholder="**********"> <!--input ingresar contrasena a usuario asociado-->
-                <br><br>
-                <button type="submit">Inicia sesión</button>
-            </form>
-            <br>
-            <button id="register_display_button" onclick="activate_Sign_up()">registrate</button> 
-        </section>
-        <br><br>
-        <section class="container_register"> <!--Contenedor para el formulario de registro-->
-            <img src="/dev/img/login-icon.svg" alt="logo NextSport" width="90%" height="300px">
-            <form id="register" action="register" method="post"> <!--Formulario para registro-->
-                <label for="new_username">Ingresa tu correo</label>
-                <input type="email" id="new_username" name="new_username" required placeholder="mail@example.com"> <!--input ingresar datos nuevo usuario-->
-                <br><br>
-                <label for="new_password">Ingresa tu contraseña</label>
-                <input type="password" id="new_password" name="new_password" required placeholder="**********"> <!--Input ingresar datos nueva contrasena-->
-                <br><br>
-                <label for="new_password">confirma tu contraseña</label>
-                <input type="password" id="confirm_password" name="confirm_password" required placeholder="**********"> <!--Input ingresar datos confirmar nueva contrasena-->
-                <br><br>
-                <button type="submit">Register</button> <!--Boton para registrar-->
-            </form>
-            <button id="login_display_button"onclick="activate_sign_in()"><</button> <!--Cambiar formulario register a log-->
-        </section>
-    </main>
-</body>
-<script src="/dev/javascript/transitionlog.js"></script> <!--Llamar al script de la pagina-->
-<script>
-    function redirectToHome(event) {
-        event.preventDefault(); // Evita que el formulario se envíe
-        window.location.href = "/dev/views/home.html"; // Redirige a la página de inicio
+  <main>
+    <section class="container_log">
+      <img src="/dev/img/login-icon.svg" alt="logo NextSport" width="90%" height="300px"> 
+      <form id="login" method="post">
+        <label for="login-name">Ingresa tu nombre:</label>
+        <input type="text" id="login-name" name="login-name" required placeholder="Tu nombre">
+        <label for="login-email">Ingresa tu correo:</label>
+        <input type="email" id="login-email" name="login-email" required placeholder="mail@example.com">
+        <label for="login-password">Ingresa tu contraseña:</label>
+        <input type="password" id="login-password" name="login-password" required placeholder="**********">
+        <button type="submit">Inicia sesión</button>
+      </form>
+      <button id="register_display_button" onclick="activate_Sign_up()">Registrate</button> 
+    </section>
+
+    <section class="container_register">
+      <img src="/dev/img/login-icon.svg" alt="logo NextSport" width="90%" height="300px">
+      <form id="register" method="post">
+        <label for="reg-name">Ingresa tu nombre</label>
+        <input type="text" id="reg-name" name="reg-name" required placeholder="Tu nombre">
+        <label for="reg-email">Ingresa tu correo</label>
+        <input type="email" id="reg-email" name="reg-email" required placeholder="mail@example.com">
+        <label for="reg-password">Ingresa tu contraseña</label>
+        <input type="password" id="reg-password" name="reg-password" required placeholder="**********">
+        <label for="confirm-password">Confirma tu contraseña</label>
+        <input type="password" id="confirm-password" name="confirm-password" required placeholder="**********">
+        <button type="submit">Registrarse</button>
+      </form>
+      <button id="login_display_button" onclick="activate_sign_in()">Volver</button>
+    </section>
+  </main>
+
+  <script src="/dev/javascript/transitionlog.js"></script>
+  <script>
+    // Mostrar u ocultar formularios
+    function activate_Sign_up() {
+      document.querySelector('.container_log').style.display = 'none';
+      document.querySelector('.container_register').style.display = 'block';
     }
-</script>
-</html> 
+    function activate_sign_in() {
+      document.querySelector('.container_register').style.display = 'none';
+      document.querySelector('.container_log').style.display = 'block';
+    }
+
+    // Lógica de autenticación con localStorage
+    document.getElementById('login').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('login-name').value;
+      const email = document.getElementById('login-email').value;
+      localStorage.setItem('user', JSON.stringify({ name, email }));
+      window.location.href = '/dev/views/home.html';
+    });
+
+    document.getElementById('register').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('reg-name').value;
+      const email = document.getElementById('reg-email').value;
+      const pass = document.getElementById('reg-password').value;
+      const confirm = document.getElementById('confirm-password').value;
+
+      if (pass !== confirm) {
+        alert('Las contraseñas no coinciden');
+        return;
+      }
+
+      localStorage.setItem('user', JSON.stringify({ name, email }));
+      window.location.href = '/dev/views/home.html';
+    });
+  </script>
+
+<script src="/dev/javascript/auth.js"></script>
+</body>
+</html>
+
