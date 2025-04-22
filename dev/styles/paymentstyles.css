@@ -63,10 +63,10 @@ section #payment_card_form {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#card_number {
+.card_number input {
     width: 100%;
 }
-#holder_name {
+.holder_name input {
     width: 100%;
 }
 .card_data  {
@@ -78,7 +78,7 @@ section #payment_card_form {
 }
 .save_card {
     position: relative;
-    top: 170px;
+    top: 150px;
 }
 .save_card input {
     margin-right: 10px;
@@ -152,9 +152,7 @@ section #payment_card_form {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     pointer-events: none;
-  }
-  
-  .toast.show {
+} 
+.toast.show {
     opacity: 1;
-  }
-  
+}  
