@@ -137,3 +137,24 @@ section #payment_card_form {
     box-sizing: border-box; /* Incluir padding y bordes en el ancho total */
 }
 
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .toast.show {
+    opacity: 1;
+  }
+  

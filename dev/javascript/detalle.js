@@ -96,7 +96,6 @@ const canchas = {
       },
   };
   
-  // 2. Leer query param ?id=
   function getQueryParam(key) {
     return new URLSearchParams(window.location.search).get(key);
   }
@@ -110,7 +109,6 @@ const canchas = {
       return;
     }
   
-    // 3. Rellenar el DOM
     document.getElementById('facility-name').textContent = data.nombre;
     document.getElementById('facility-location').textContent = data.location;
     document.getElementById('facility-price').textContent = data.price;
@@ -118,7 +116,6 @@ const canchas = {
     document.getElementById('header-image').src = data.imgHeader;
     document.getElementById('header-image').alt = data.nombre + " facility";
   
-    // 4. Botones de features
     const featuresContainer = document.getElementById('feature-buttons');
     data.features.forEach(f => {
       const btn = document.createElement('button');
@@ -127,7 +124,6 @@ const canchas = {
       featuresContainer.appendChild(btn);
     });
   
-    // 5. Galería
     const gal = document.getElementById('gallery-grid');
     data.gallery.forEach(src => {
       const img = document.createElement('img');
@@ -137,9 +133,15 @@ const canchas = {
       gal.appendChild(img);
     });
   
-    // 6. Contacto y reserva
-    document.getElementById('reserve-btn')
-      .addEventListener('click', () => 
-        window.location.href = `pago.html?id=${id}`
-      );
+    document.getElementById('reserve-btn').addEventListener('click', () => {
+      const fecha = prompt("Ingrese la fecha de reserva (DD/MM/AAAA):");
+      const hora = prompt("Ingrese la hora de inicio (por ejemplo, 18:00):");
+      const duracion = prompt("Ingrese la duración en horas:");
+  
+      if (fecha && hora && duracion) {
+        window.location.href = `pago.html?id=${id}&fecha=${encodeURIComponent(fecha)}&hora=${encodeURIComponent(hora)}&duracion=${encodeURIComponent(duracion)}`;
+      } else {
+        alert("Por favor ingrese todos los datos de reserva.");
+      }
+    });
   });

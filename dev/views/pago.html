@@ -1,73 +1,55 @@
+<!-- pago.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finalizar reserva</title>
-    <link rel="icon" href="/dev/img/Vector.svg" type="/imagenes">
-    <link rel="stylesheet" href="/dev/styles/paymentstyles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar reserva</title>
+  <link rel="icon" href="/dev/img/Vector.svg">
+  <link rel="stylesheet" href="/dev/styles/paymentstyles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><img src="" alt=""></li>
-                <li><h2>Finalizar reserva</h2></li>
-                <li><img src="" alt=""></li>
-            </ul>
-        </nav>
-    </header>
-    <br><br>
-    <main>
-        <section class="info_payment">
-            <h1>Resumen reserva</h1>
-            <hr>
-            <div>
-                <p>Cancha</p>
-                <p id="court_type">nombre</p>
-            </div>
-            <div>
-                <p>Fecha</p>
-                <p id="court_date">00/00/0000</p>
-            </div> 
-            <div>
-                <p>Hora</p>
-                <p id="court_time">00:00 - 00:00</p>
-            </div>
-            <div>
-                <p>Duración</p>
-                <p id="court_duration">0 horas</p>
-            </div>
-            <hr>
-            <h1>Total a pagar</h1>
-            <div>
-                <p>Total a pagar</p>
-                <p id="court_price">$00.00,00</p>
-            </div>
-        </section>
-        <br><br>
-        <section class="payment_methods">
-            <h1>Métodos de pago</h1>
-            <hr>
-            <form method="post" id="payment_methods_form">
-                <label>
-                    <input type="radio" name="payment_method" id="tarjeta">
-                    Tarjeta crédito/débito
-                </label>
-                <label>
-                    <input type="radio" name="payment_method" id="paypal">
-                    PayPal
-                </label>
-                <label>
-                    <input type="radio" name="payment_method" id="transferencia">
-                    Transferencia bancaria
-                </label>
-            </form>
-            <div id="payment_method"></div>
-        </section>
-        <br><br>
-    </main>
-    <script src="/dev/javascript/detalle.js"></script>
-    <script src="/dev/javascript/paymethod.js"></script>
+  <header>
+    <nav>
+      <ul>
+        <li><img src="" alt=""></li>
+        <li><h2>Finalizar reserva</h2></li>
+        <li><img src="" alt=""></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="info_payment">
+      <h1>Resumen reserva</h1>
+      <hr>
+      <div><p>Cancha</p><p id="court_type">nombre</p></div>
+      <div><p>Fecha</p><p id="court_date">00/00/0000</p></div>
+      <div><p>Hora</p><p id="court_time">00:00</p></div>
+      <div><p>Duración</p><p id="court_duration">0 horas</p></div>
+      <hr>
+      <h1>Total a pagar</h1>
+      <div><p>Total a pagar</p><p id="court_price">$00.00,00</p></div>
+    </section>
+
+    <section class="payment_methods">
+      <h1>Métodos de pago</h1>
+      <hr>
+      <form method="post" id="payment_methods_form">
+        <label><input type="radio" name="payment_method" id="tarjeta"> Tarjeta crédito/débito</label>
+        <label><input type="radio" name="payment_method" id="paypal"> PayPal</label>
+        <label><input type="radio" name="payment_method" id="transferencia"> Transferencia bancaria</label>
+      </form>
+      <div id="payment_method"></div>
+    </section>
+  </main>
+
+  <!-- TOAST de notificación -->
+  <div id="reserva-exitosa" class="toast">
+    <p>🎉 ¡Tu reserva se ha completado con éxito!</p>
+  </div>
+
+  <script src="/dev/javascript/detalle.js"></script>
+  <script src="/dev/javascript/paymethod.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <button onclick="history.back()">← Volver</button>
+    <button class="back-btn" onclick="history.back()">← Volver</button>
     <h1>Perfil</h1>
   </header>
   <main>
@@ -85,7 +85,21 @@
                     <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
                 </div>
             </div>
+            <button id="logout-btn">Cerrar Sesión</button>
         </section>
     </main>
 </body>
+<script>
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (!user) window.location.href = '/dev/views/logpage.html';
+    document.querySelector('.profile-name').textContent = user.name;
+    document.querySelector('.profile-email').textContent = user.email;
+  
+    // Cerrar sesión
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.removeItem('user');
+      window.location.href = '/dev/views/logpage.html';
+    });
+  </script>
+  
 </html>
