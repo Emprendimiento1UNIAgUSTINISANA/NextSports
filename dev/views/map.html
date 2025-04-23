@@ -2,15 +2,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=e, initial-scale=1.0">
-    <link rel="stylesheet" href="/dev/styles/map.css">
+
     <link rel="icon" href="/dev/img/Vector.svg" type="/imagenes">
     <title>Mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /><!-- Hoja de estilos de Leaflet para modificar el mapa -->
+    <link rel="stylesheet" href="/dev/styles/estilo_mapa.css">
+
 </head>
 <body>
     <!-- Titulo de la pagina -->
     <header>
+        <input type="text" name="bucadorcanchas" id="buscador" placeholder="Buscar canchas...">
         <h1 class="title">
-             Canchas de futbol
+            Canchas de disponibles
         </h1>
     </header>
     <!-- Contenido de la pagina -->
@@ -20,35 +24,27 @@
             <span class="icono-buscador">
                 <i class="fas fa-search"></i>
             </span>
-            <div class="buscador">
-                <input type="text" name="bucadorcanchas" id="buscador" placeholder="Buscar canchas...">
-            </div>
-            <div class="botonesfiltro">
-                <button>Cercanas</button>
-                <button>Futbol 5</button>
-                <button>Futbol 7</button>
-            </div> 
-        </section>
-        <!-- Mapa de busqueda -->
-        <section class="mapa">
-            <img src="/dev/img/mapa.png" alt="Mapa de canchas">
-        </section>
-        <!-- Informacion de la cancha -->
-        <section>
-            <div class="info-canchas">
-            <h2 class="nombrecancha">
-                Cancha el Goleador
-           </h2>
-           <p class="disponibleahora"><i class="fas fa-map-marker-alt"></i>Disponible ahora</p>
-           <p><i class="fas fa-map-marker-alt"></i>Av. Libertador 1234, CABA</p>
-           <p><i class="fas fa-map-marker-alt"></i>Futbol 5, y 7, cesped sintetico</p>
-           <p><strong>$50000</strong></p>
-           <nav>
-               <a href="" class="verdetalles">Ver detalles</a>  
-               <a href="" class="reservar">Reservar</a>
-           </nav>
-           </div>
-        </section>
+            <section class="mapa">
+                <aside>        
+                    <article class="canchas" id="cancha_info">
+                        <section>
+                            <img src="/dev/img/canchas111.jpg" alt="">
+                            <h1 id="nombre_cancha">Nombre</h1>
+                            <p id="desc_cancha">Lorem ipsum dolor sit amet consectetur 
+                                adipisicing elit. Saepe suscipit quibusdam 
+                                ]harum dignissimos sint aut, dolorem praesentium 
+                                sit est commodi doloribus. Possimus quis maiores 
+                                neque, quod sapiente reprehenderit blanditiis animi.
+                            </p>
+                            <button onclick="">reservar</button>
+                        </section>
+                    </article>
+                </aside>
+                <div id="map"></div>
+            </section>
     </main>
+    <!-- Script de Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/dev/javascript/mapa.js"></script>
 </body>
 </html>
