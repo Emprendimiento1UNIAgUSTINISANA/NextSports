@@ -12,66 +12,24 @@
 
     <!-- LOGIN -->
     <form id="login-form">
-      <label for="login-name">Nombre:</label>
       <input type="text" id="login-name" name="login-name" required placeholder="Juan Pérez" />
-      <label for="login-email">Correo:</label>
       <input type="email" id="login-email" name="login-email" required placeholder="mail@example.com" />
       <button type="submit">Iniciar Sesión</button>
+      <p>¿No tienes cuenta? <a href="#" id="show-register">Regístrate</a></p>
     </form>
-    <p>¿No tienes cuenta? <a href="#" id="show-register">Regístrate</a></p>
 
     <!-- REGISTRO -->
     <form id="register-form" style="display: none;">
-      <label for="reg-name">Nombre:</label>
       <input type="text" id="reg-name" name="reg-name" required placeholder="Tu nombre" />
-      <label for="reg-email">Correo:</label>
       <input type="email" id="reg-email" name="reg-email" required placeholder="mail@example.com" />
-      <label for="reg-password">Contraseña:</label>
       <input type="password" id="reg-password" name="reg-password" required placeholder="********" />
       <button type="submit">Registrar</button>
+      <p style="display: none;">¿Ya tienes cuenta? <a href="#" id="show-login">Inicia Sesión</a></p>
     </form>
-    <p style="display: none;">¿Ya tienes cuenta? <a href="#" id="show-login">Inicia Sesión</a></p>
+    
   </main>
 
   <script src="/dev/javascript/transitionlog.js"></script>
-  <script>
-    const loginForm = document.getElementById('login-form');
-    const registerForm = document.getElementById('register-form');
-    const showRegister = document.getElementById('show-register');
-    const showLogin = document.getElementById('show-login');
-
-    showRegister.addEventListener('click', e => {
-      e.preventDefault();
-      loginForm.style.display = 'none';
-      registerForm.style.display = 'block';
-      showRegister.parentElement.style.display = 'none';
-      showLogin.parentElement.style.display = 'block';
-    });
-
-    showLogin.addEventListener('click', e => {
-      e.preventDefault();
-      loginForm.style.display = 'block';
-      registerForm.style.display = 'none';
-      showRegister.parentElement.style.display = 'block';
-      showLogin.parentElement.style.display = 'none';
-    });
-
-    registerForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const name = document.getElementById('reg-name').value;
-      const email = document.getElementById('reg-email').value;
-      localStorage.setItem('user', JSON.stringify({ name, email }));
-      window.location.href = '/dev/views/home.html';
-    });
-
-    loginForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const name = document.getElementById('login-name').value;
-      const email = document.getElementById('login-email').value;
-      localStorage.setItem('user', JSON.stringify({ name, email }));
-      window.location.href = '/dev/views/home.html';
-    });
-  </script>
 </body>
 </html>
 

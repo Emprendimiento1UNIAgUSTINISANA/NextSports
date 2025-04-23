@@ -1,26 +1,36 @@
-const container_log = document.querySelector('.container_log');
-const container_register = document.querySelector('.container_register');
+const loginForm = document.getElementById('login-form');
+const registerForm = document.getElementById('register-form');
+const showRegister = document.getElementById('show-register');
+const showLogin = document.getElementById('show-login');
 
-function activate_Sign_up() {
-    container_log.style.transition = 'opacity 0.5s ease';
-    container_register.style.transition = 'opacity 0.5s ease';
+showRegister.addEventListener('click', e => {
+    e.preventDefault();
+    loginForm.style.display = 'none';
+    registerForm.style.display = 'flex';
+    showRegister.parentElement.style.display = 'none';
+    showLogin.parentElement.style.display = 'flex';
+});
 
-    container_log.style.opacity = '0'; // Fade out del login
-    setTimeout(() => {
-        container_log.style.visibility = 'hidden'; // Oculta después del fade out
-        container_register.style.visibility = 'visible'; // Muestra el registro
-        container_register.style.opacity = '1'; // Fade in del registro
-    }, 500); // Tiempo igual a la duración de la transición
-}
+showLogin.addEventListener('click', e => {
+    e.preventDefault();
+    loginForm.style.display = 'flex';
+    registerForm.style.display = 'none';
+    showRegister.parentElement.style.display = 'flex';
+    showLogin.parentElement.style.display = 'none';
+});
 
-function activate_sign_in() {
-    container_register.style.transition = 'opacity 0.5s ease';
-    container_log.style.transition = 'opacity 0.5s ease';
+registerForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('reg-name').value;
+    const email = document.getElementById('reg-email').value;
+    localStorage.setItem('user', JSON.stringify({ name, email }));
+    window.location.href = '/dev/views/home.html';
+});
 
-    container_register.style.opacity = '0'; // Fade out del registro
-    setTimeout(() => {
-        container_register.style.visibility = 'hidden'; // Oculta después del fade out
-        container_log.style.visibility = 'visible'; // Muestra el login
-        container_log.style.opacity = '1'; // Fade in del login
-    }, 500); // Tiempo igual a la duración de la transición
-}
+loginForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('login-name').value;
+    const email = document.getElementById('login-email').value;
+    localStorage.setItem('user', JSON.stringify({ name, email }));
+    window.location.href = '/dev/views/home.html';
+});
