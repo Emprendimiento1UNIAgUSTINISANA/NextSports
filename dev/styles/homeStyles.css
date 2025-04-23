@@ -342,3 +342,91 @@ header {
 .btn-suscribir.gris:hover {
     background-color: #333;
 }
+
+/* === Responsive para móviles === */
+@media (max-width: 768px) {
+
+    header {
+      padding: 40px 15px 30px;
+    }
+  
+    .header-content {
+      text-align: center;
+    }
+  
+    .options {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .option {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+  
+    /* Scroll horizontal para las canchas */
+    .canchas,
+    .canchas-populares {
+      overflow-x: auto;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 15px;
+      padding-bottom: 10px;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .cancha,
+    .cancha-popular {
+      flex: 0 0 80%;
+      min-width: 250px;
+    }
+  
+    .cancha img,
+    .cancha-popular img {
+      height: 160px;
+    }
+  
+    .just-for-you,
+    .popular {
+      padding: 15px;
+    }
+  
+    .just-for-you h2,
+    .popular h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  
+    .ver-mas-wrapper {
+      text-align: center;
+      margin-top: 10px;
+    }
+  
+    .titulo-suscripcion {
+      font-size: 22px;
+    }
+  
+    .planes {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .plan {
+      width: 90%;
+    }
+  
+    .logo {
+      position: static;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  
+    .user-actions {
+      position: static;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
+  

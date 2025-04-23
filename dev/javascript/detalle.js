@@ -134,14 +134,24 @@ const canchas = {
     });
   
     document.getElementById('reserve-btn').addEventListener('click', () => {
-      const fecha = prompt("Ingrese la fecha de reserva (DD/MM/AAAA):");
-      const hora = prompt("Ingrese la hora de inicio (por ejemplo, 18:00):");
-      const duracion = prompt("Ingrese la duración en horas:");
-  
+      document.getElementById('reserva-modal').classList.remove('hidden');
+    });
+    
+    document.getElementById('cerrar-modal').addEventListener('click', () => {
+      document.getElementById('reserva-modal').classList.add('hidden');
+    });
+    
+    document.getElementById('confirmar-reserva').addEventListener('click', () => {
+      const fecha = document.getElementById('fecha-reserva').value;
+      const hora = document.getElementById('hora-reserva').value;
+      const duracion = document.getElementById('duracion-reserva').value;
+    
       if (fecha && hora && duracion) {
+        const id = getQueryParam('id');
         window.location.href = `pago.html?id=${id}&fecha=${encodeURIComponent(fecha)}&hora=${encodeURIComponent(hora)}&duracion=${encodeURIComponent(duracion)}`;
       } else {
-        alert("Por favor ingrese todos los datos de reserva.");
+        alert("Por favor complete todos los campos.");
       }
     });
-  });
+    
+    });
