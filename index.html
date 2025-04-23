@@ -1,162 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plataforma de Canchas de Fútbol</title>
-  <link rel="stylesheet" href="dev/styles/homeStyles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Canchas de Fútbol</title>
+    <link rel="stylesheet" href="dev/styles/homeStyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="dev/img/Icon-stand-alone.svg" alt="Logo">
-    </div>
-    <div class="user-actions">
-      <button id="login-btn" class="login-btn">Iniciar Sesión / Registrarse</button>
-      <button id="profile-btn" class="profile-btn" style="display:none;"><i class="fas fa-user"></i></button>
-    </div>
-    <div class="header-content">
-      <p id="greeting" class="user-name">Hola, Invitado</p>
-      <h2 class="search-title">¿Qué estás buscando?</h2>
-      <nav class="options">
-        <a href="dev/views/reserva.html" class="option"><img src="dev/img/Vector.svg" alt="Rentar Cancha"><span>Rentar Cancha</span></a>
-        <a href="dev/views/map.html" class="option"><img src="dev/img/map.png" alt="Mapa"><span>Mapa</span></a>
-      </nav>
-    </div>
-
-    <script src="dev/javascript/auth.js"></script>
-  </header>
-
-<section class="just-for-you">
-    <h2>Justo para ti</h2>
-    <article class="canchas">
-      <figure class="cancha" data-url="dev/views/Details.html?id=donbalon">
-        <img src="dev/img/Donbalon.png" alt="Don Balón">
-        <figcaption>
-          <span class="rating">★ 4.4</span>
-          <h3>Don Balón</h3>
-          <p><strong>$50000</strong></p>
-          <p><i class="fas fa-map-marker-alt"></i> Soacha, Cundinamarca</p>
-          <ul class="features">
-            <li><i class="fas fa-futbol"></i> 3 Canchas</li>
-            <li><i class="fas fa-wifi"></i> Wifi</li>
-            <li><i class="fas fa-car"></i> Garage</li>
-          </ul>
-        </figcaption>
-      </figure>
-  
-      <figure class="cancha" data-url="dev/views/Details.html?id=canchasinteticas">
-        <img src="dev/img/CanchasSinteticas.jpg" alt="Canchas Sintéticas">
-        <figcaption>
-          <span class="rating">★ 4.3</span>
-          <h3>Canchas Sintéticas</h3>
-          <p><strong>$45000</strong></p>
-          <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
-          <ul class="features">
-            <li><i class="fas fa-futbol"></i> 2 Canchas</li>
-            <li><i class="fas fa-wifi"></i> Wifi</li>
-            <li><i class="fas fa-car"></i> Garage</li>
-          </ul>
-        </figcaption>
-      </figure>
-  
-      <figure class="cancha" data-url="dev/views/Details.html?id=soccer7">
-        <img src="dev/img/Soccer7.jpg" alt="Super Soccer 7">
-        <figcaption>
-          <span class="rating">★ 4.5</span>
-          <h3>Super Soccer 7</h3>
-          <p><strong>$40000</strong></p>
-          <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
-          <ul class="features">
-            <li><i class="fas fa-futbol"></i> 6 Canchas</li>
-            <li><i class="fas fa-wifi"></i> Wifi</li>
-          </ul>
-        </figcaption>
-      </figure>
-    </article>
-  
-    <div class="ver-mas-wrapper">
-      <a href="dev/views/reserva.html" class="ver-mas-link">Ver más</a>
-    </div>
-  </section>
-  
-  <section class="popular">
-    <h2>Populares</h2>
-    <article class="canchas-populares">
-      <figure class="cancha-popular" data-url="dev/views/Details.html?id=futbol8">
-        <img src="dev/img/Canchas8.jpg" alt="CANCHA DE Futbol 8">
-        <figcaption>
-          <span class="rating">★ 4.5</span>
-          <h3>CANCHA DE Futbol 8</h3>
-          <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
-          <p><strong>$60000</strong></p>
-          <ul class="features">
-            <li><i class="fas fa-futbol"></i> 3 Canchas</li>
-            <li><i class="fas fa-wifi"></i> Wifi</li>
-            <li><i class="fas fa-car"></i> Garage</li>
-          </ul>
-        </figcaption>
-      </figure>
-  
-      <figure class="cancha-popular" data-url="dev/views/Details.html?id=futbol11fa">
-        <img src="dev/img/Canchas11.avif" alt="CANCHA DE Futbol 11 y FA">
-        <figcaption>
-          <span class="rating">★ 4.3</span>
-          <h3>CANCHA DE Futbol 11 y FA</h3>
-          <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
-          <p><strong>$55550</strong></p>
-          <ul class="features">
-            <li><i class="fas fa-futbol"></i> 2 Canchas</li>
-            <li><i class="fas fa-wifi"></i> Wifi</li>
-          </ul>
-        </figcaption>
-      </figure>
-    </article>
-  </section>
-  
-  <script src="dev/javascript/canchas.js"></script>
- 
-    <section class="suscripciones">
-        <h2 class="titulo-suscripcion">Elige tu suscripción</h2>
-        <div class="planes">
-            <article class="plan">
-                <h3>Plan Estrella</h3>
-                <p class="precio">$12.900 <span>al mes</span></p>
-                <ul>
-                    <li>3 Reservas activas  al tiempo</li>
-                    <li>Soporte prioritario</li>
-                    <li>Sin anuncios</li>
-                    <li>10% de descuento en Reservas</li>
-                    <li>Reserva hasta con 7 dias de anticipacion</li>
-                </ul>
-                <button class="btn-suscribir">Suscribirme</button>
-            </article>
-    
-            <article class="plan destacado">
-                <h3>Plan Balon de oro</h3>
-                <p class="precio">$29.900 <span>al mes</span></p>
-                <ul>
-                    <li>Incluido Plan Estrella</li>
-                    <li>Reservas ilimitadas y hasta 15 dias de anticipacion</li>
-                    <li>10% mas de descuento</li>
-                    <li>Soporte preferencial</li>
-                </ul>
-                <button class="btn-suscribir">Suscribirme</button>
-            </article>
-    
-            <article class="plan">
-                <h3>Plan Amateur</h3>
-                <p class="precio">A convenir</p>
-                <ul>
-                    <li>1 reserva activa a la vez</li>
-                    <li>Reservas con horarios de baja demanda</li>
-                    <li>Reservas con 24h de anticipacion</li>
-                </ul>
-                <button class="btn-suscribir gris">Gratis</button>
-            </article>
+    <header>
+        <div class="logo">
+        <img src="dev/img/Icon-stand-alone.svg" alt="Logo">
         </div>
-    </section>  
+        <div class="user-actions">
+        <button id="login-btn" class="login-btn">Iniciar Sesión / Registrarse</button>
+        <button id="profile-btn" class="profile-btn" style="display:none;"><i class="fas fa-user"></i></button>
+        </div>
+        <div class="header-content">
+        <p id="greeting" class="user-name">Hola, Invitado</p>
+        <h2 class="search-title">¿Qué estás buscando?</h2>
+        <nav class="options">
+            <a href="dev/views/reserva.html" class="option"><img src="dev/img/Vector.svg" alt="Rentar Cancha"><span>Rentar Cancha</span></a>
+            <a href="dev/views/map.html" class="option"><img src="dev/img/map.png" alt="Mapa"><span>Mapa</span></a>
+        </nav>
+        </div>
+
+        <script src="dev/javascript/auth.js"></script>
+    </header>
+
+    <section class="just-for-you">
+        <h2>Justo para ti</h2>
+        <article class="canchas">
+        <figure class="cancha" data-url="dev/views/Details.html?id=donbalon">
+            <img src="dev/img/Donbalon.png" alt="Don Balón">
+            <figcaption>
+            <span class="rating">★ 4.4</span>
+            <h3>Don Balón</h3>
+            <p><strong>$50000</strong></p>
+            <p><i class="fas fa-map-marker-alt"></i> Soacha, Cundinamarca</p>
+            <ul class="features">
+                <li><i class="fas fa-futbol"></i> 3 Canchas</li>
+                <li><i class="fas fa-wifi"></i> Wifi</li>
+                <li><i class="fas fa-car"></i> Garage</li>
+            </ul>
+            </figcaption>
+        </figure>
+    
+        <figure class="cancha" data-url="dev/views/Details.html?id=canchasinteticas">
+            <img src="dev/img/CanchasSinteticas.jpg" alt="Canchas Sintéticas">
+            <figcaption>
+            <span class="rating">★ 4.3</span>
+            <h3>Canchas Sintéticas</h3>
+            <p><strong>$45000</strong></p>
+            <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+            <ul class="features">
+                <li><i class="fas fa-futbol"></i> 2 Canchas</li>
+                <li><i class="fas fa-wifi"></i> Wifi</li>
+                <li><i class="fas fa-car"></i> Garage</li>
+            </ul>
+            </figcaption>
+        </figure>
+    
+        <figure class="cancha" data-url="dev/views/Details.html?id=soccer7">
+            <img src="dev/img/Soccer7.jpg" alt="Super Soccer 7">
+            <figcaption>
+            <span class="rating">★ 4.5</span>
+            <h3>Super Soccer 7</h3>
+            <p><strong>$40000</strong></p>
+            <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+            <ul class="features">
+                <li><i class="fas fa-futbol"></i> 6 Canchas</li>
+                <li><i class="fas fa-wifi"></i> Wifi</li>
+            </ul>
+            </figcaption>
+        </figure>
+        </article>
+    
+        <div class="ver-mas-wrapper">
+        <a href="dev/views/reserva.html" class="ver-mas-link">Ver más</a>
+        </div>
+    </section>
+    
+    <section class="popular">
+        <h2>Populares</h2>
+        <article class="canchas-populares">
+        <figure class="cancha-popular" data-url="dev/views/Details.html?id=futbol8">
+            <img src="dev/img/Canchas8.jpg" alt="CANCHA DE Futbol 8">
+            <figcaption>
+            <span class="rating">★ 4.5</span>
+            <h3>CANCHA DE Futbol 8</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+            <p><strong>$60000</strong></p>
+            <ul class="features">
+                <li><i class="fas fa-futbol"></i> 3 Canchas</li>
+                <li><i class="fas fa-wifi"></i> Wifi</li>
+                <li><i class="fas fa-car"></i> Garage</li>
+            </ul>
+            </figcaption>
+        </figure>
+    
+        <figure class="cancha-popular" data-url="dev/views/Details.html?id=futbol11fa">
+            <img src="dev/img/Canchas11.avif" alt="CANCHA DE Futbol 11 y FA">
+            <figcaption>
+            <span class="rating">★ 4.3</span>
+            <h3>CANCHA DE Futbol 11 y FA</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+            <p><strong>$55550</strong></p>
+            <ul class="features">
+                <li><i class="fas fa-futbol"></i> 2 Canchas</li>
+                <li><i class="fas fa-wifi"></i> Wifi</li>
+            </ul>
+            </figcaption>
+        </figure>
+        </article>
+    </section>
+    
+    <script src="dev/javascript/canchas.js"></script>
+    
+        <section class="suscripciones">
+            <h2 class="titulo-suscripcion">Elige tu suscripción</h2>
+            <div class="planes">
+                <article class="plan">
+                    <h3>Plan Estrella</h3>
+                    <p class="precio">$12.900 <span>al mes</span></p>
+                    <ul>
+                        <li>3 Reservas activas  al tiempo</li>
+                        <li>Soporte prioritario</li>
+                        <li>Sin anuncios</li>
+                        <li>10% de descuento en Reservas</li>
+                        <li>Reserva hasta con 7 dias de anticipacion</li>
+                    </ul>
+                    <button class="btn-suscribir">Suscribirme</button>
+                </article>
+        
+                <article class="plan destacado">
+                    <h3>Plan Balon de oro</h3>
+                    <p class="precio">$29.900 <span>al mes</span></p>
+                    <ul>
+                        <li>Incluido Plan Estrella</li>
+                        <li>Reservas ilimitadas y hasta 15 dias de anticipacion</li>
+                        <li>10% mas de descuento</li>
+                        <li>Soporte preferencial</li>
+                    </ul>
+                    <button class="btn-suscribir">Suscribirme</button>
+                </article>
+        
+                <article class="plan">
+                    <h3>Plan Amateur</h3>
+                    <p class="precio">A convenir</p>
+                    <ul>
+                        <li>1 reserva activa a la vez</li>
+                        <li>Reservas con horarios de baja demanda</li>
+                        <li>Reservas con 24h de anticipacion</li>
+                    </ul>
+                    <button class="btn-suscribir gris">Gratis</button>
+                </article>
+            </div>
+        </section>  
 </body>
 </html>
