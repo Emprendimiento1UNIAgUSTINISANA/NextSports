@@ -13,11 +13,13 @@ body {
 }
 
 .user-card {
+  background-color: #d3d3d3;
+  border-radius: 10px 0 0 10px;
+  padding: 25px;
+  font-size: 40px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  justify-content: center;
 }
 
 .icono-usuario {
@@ -97,12 +99,3 @@ body {
   color: white;
 }
 
-.perfil-icono {
-  background-color: #d3d3d3;
-  border-radius: 10px 0 0 10px;
-  padding: 25px;
-  font-size: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
