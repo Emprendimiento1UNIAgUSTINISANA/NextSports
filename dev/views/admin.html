@@ -41,5 +41,18 @@
     </div>
   </div>
 <script src="/dev/javascript/admin.js"></script>
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (!user || !(user.name === 'admin' && user.email === 'admin@example.com')) {
+        alert('Debes iniciar sesión como administrador.');
+        window.location.href = '/dev/views/logpage.html'; // Redirigir al inicio si no está autenticado
+      } else {
+        document.getElementById('admin-name').textContent = user.name; // Mostrar el nombre del administrador
+      }
+    });
+
+  </script>
 </body>
 </html>
