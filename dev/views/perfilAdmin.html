@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Perfil</title>
+    <link rel="stylesheet" href="/dev/styles/adminStyles.css">
+</head>
+<body>
+
+      <div class="container">
+    <h1>Editor de Perfil</h1>
+
+    <button class="btn btn-green" onclick="window.location.href='admin.html'">Volver</button> 
+
+    <!-- Caja de perfil -->
+    <div class="profile-box">
+      <div class="avatar-icon">👤</div>
+      <div class="role" id="user-role">Arrendatario</div> 
+    </div>
+
+    <div id="profiles-container"></div> 
+
+    <form id="add-profile-form">
+      <input type="text" id="new-profile-name" placeholder="Nombre del nuevo perfil" required />
+      <button type="submit">Agregar Perfil</button>
+    </form>
+  </div>
+    
+</body>
+</html>
