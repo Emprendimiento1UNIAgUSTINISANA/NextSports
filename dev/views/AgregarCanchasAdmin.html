@@ -20,6 +20,46 @@
       <button onclick="agregarCancha()">Agregar</button>
     </div>
   </section>
+<script>
+  function agregarCancha() {
+  const container = document.getElementById('canchas-container');
+
+  const cancha = document.createElement('div');
+  cancha.className = 'cancha-card';
+
+  cancha.innerHTML = `
+    <img src="/NextSports-main/dev/img/Donbalon.png" alt="cancha" />
+    <div class="card-content">
+      <h3 class="titulo-cancha">Don Balón</h3>
+      <p class="ubicacion">Suba, Cundinamarca</p>
+      <p class="precio">$50000</p>
+    </div>
+    <div class="card-actions">
+      <button class="btn-eliminar">
+        <img src="/NextSports-main/dev/assets/delete-icon.svg" alt="eliminar" width="16">Eliminar
+      </button>
+      <button class="btn-editar">
+        <img src="/NextSports-main/dev/assets/edit-icon.svg" alt="editar" width="16">Editar
+      </button>
+    </div>
+  `;
+
+  // Agregar al DOM
+  container.appendChild(cancha);
+
+  // Botones funcionales dentro de la tarjeta
+  cancha.querySelector('.btn-eliminar').addEventListener('click', () => {
+    cancha.remove();
+  });
+
+  cancha.querySelector('.btn-editar').addEventListener('click', () => {
+    const nuevoNombre = prompt("Editar nombre de la cancha:", "Don Balón");
+    if (nuevoNombre) {
+      cancha.querySelector('.titulo-cancha').textContent = nuevoNombre;
+    }
+  });
+}
+</script>
   <main id="canchas-container" class="canchas-container"></main>
 </body>
 </html>
