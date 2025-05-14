@@ -22,46 +22,5 @@
   </section>
 
   <main id="eventos-container" class="eventos-container"></main>
-
-  <script>
-    function agregarEvento() {
-  const container = document.getElementById('eventos-container');
-
-  const evento = document.createElement('div');
-  evento.className = 'evento-card';
-
-  evento.innerHTML = `
-    <img src="/NextSports-main/dev/img/Donbalon.png" alt="cancha" />
-    <div class="card-content">
-      <h3 class="titulo-evento">Don Balón</h3>
-      <p class="ubicacion">Soacha, Cundinamarca</p>
-      <p class="precio">$50000</p>
-    </div>
-    <div class="card-actions">
-      <button class="btn-eliminar">
-        <img src="/NextSports-main/dev/assets/delete-icon.svg" alt="eliminar" width="16">Eliminar
-      </button>
-      <button class="btn-editar">
-        <img src="/NextSports-main/dev/assets/edit-icon.svg" alt="editar" width="16">Editar
-      </button>
-    </div>
-  `;
-
-  // Insertar
-  container.appendChild(evento);
-
-  // Funcionalidad
-  evento.querySelector('.btn-eliminar').addEventListener('click', () => {
-    evento.remove();
-  });
-
-  evento.querySelector('.btn-editar').addEventListener('click', () => {
-    const nuevoNombre = prompt("Editar nombre del evento:", "Don Balón");
-    if (nuevoNombre) {
-      evento.querySelector('.titulo-evento').textContent = nuevoNombre;
-    }
-  });
-}
-  </script>
 </body>
 </html>
