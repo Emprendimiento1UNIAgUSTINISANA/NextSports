@@ -11,7 +11,7 @@
       <!-- Header agregado -->
   <header class="main-header">
     <h1>Panel de Administrador</h1>
-    <div id="admin-name">👤 Arrendatario</div> <!-- Aquí se mostrará el nombre del administrador -->
+    <div id="admin-name">👤 Arrendatario</div> 
     <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
   </header>
     <!-- Contenido principal -->
@@ -54,13 +54,13 @@
     });
         
     function logout() {
-      localStorage.removeItem('user'); // Eliminar las credenciales del almacenamiento local
-      alert("Sesión cerrada."); // Mensaje de confirmación
-      window.location.href = '/dev/views/logpage.html'; // Redirigir al inicio
+      localStorage.removeItem('user'); 
+      alert("Sesión cerrada."); 
+      window.location.href = '/dev/views/logpage.html'; 
     }
       
     function salir() {
-      // Lógica para salir
+      
       alert("Saliendo...");
     }
         function mostrarNotificaciones() {
