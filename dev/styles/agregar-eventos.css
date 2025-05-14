@@ -96,3 +96,13 @@ body {
   background-color: #ff6666;
   color: white;
 }
+
+.perfil-icono {
+  background-color: #d3d3d3;
+  border-radius: 10px 0 0 10px;
+  padding: 25px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
