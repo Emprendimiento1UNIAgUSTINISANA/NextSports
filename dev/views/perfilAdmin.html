@@ -32,7 +32,7 @@
 
     // Mostrar el nombre del usuario en la caja de perfil
     if (user) {
-      document.getElementById('user-role').textContent = user.name; // Mostrar el nombre del usuario
+      document.getElementById('user-role').textContent = user.name; 
     }
 
    
@@ -78,6 +78,15 @@
       localStorage.setItem('profiles', JSON.stringify(profiles));
       displayProfiles();
     }
+        
+    document.addEventListener('DOMContentLoaded', displayProfiles);
+
+    document.getElementById('add-profile-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('new-profile-name').value;
+      addProfile(name);
+      document.getElementById('new-profile-name').value = ''; 
+    });
 
 
   </script>
