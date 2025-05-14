@@ -32,5 +32,10 @@ loginForm.addEventListener('submit', e => {
     const name = document.getElementById('login-name').value;
     const email = document.getElementById('login-email').value;
     localStorage.setItem('user', JSON.stringify({ name, email }));
-    window.location.href = '/dev/views/home.html';
+        // Verificar si el usuario es el administrador
+    if (name === 'admin' && email === 'admin@example.com') { // Cambia esto según tu lógica
+        window.location.href = '/dev/views/admin.html'; // Redirigir al panel de administración
+    } else {
+        window.location.href = '/dev/views/home.html'; // Redirigir a la página de inicio para usuarios normales
+    }
 });
