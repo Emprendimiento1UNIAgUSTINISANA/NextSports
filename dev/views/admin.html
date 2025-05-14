@@ -13,6 +13,32 @@
     <div id="admin-name">👤 Arrendatario</div> <!-- Aquí se mostrará el nombre del administrador -->
     <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
   </header>
+    <!-- Contenido principal -->
+  <div class="container">
+    <div class="user-card">
+      <div class="user-icon">👤</div>
+      <div class="user-role">Arrendatario</div>
+      <div class="buttons">
+        <button onclick="salir()">Salir</button>
+        <button onclick="mostrarNotificaciones()">Notificaciones</button>
+      </div>
+    </div>
+    
+    <div class="icon-grid">
+      <div class="icon-box" onclick="perfil()">
+        <span>👤</span>
+      </div>
+      <div class="icon-box" onclick="notas()">
+        <span>🧾</span>
+      </div>
+      <div class="icon-box" onclick="nuevo()">
+        <span>➕</span>
+      </div>
+      <div class="icon-box" onclick="ayuda()">
+        <span>❓</span>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
