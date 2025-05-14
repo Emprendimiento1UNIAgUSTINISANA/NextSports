@@ -26,6 +26,38 @@
       <button type="submit">Agregar Perfil</button>
     </form>
   </div>
+  <script>
+    let profiles = JSON.parse(localStorage.getItem('profiles')) || [];
+    const user = JSON.parse(localStorage.getItem('user')); 
+
+    // Mostrar el nombre del usuario en la caja de perfil
+    if (user) {
+      document.getElementById('user-role').textContent = user.name; // Mostrar el nombre del usuario
+    }
+
+   
+    function displayProfiles() {
+      const container = document.getElementById('profiles-container');
+      container.innerHTML = ''; 
+      profiles.forEach((profile, index) => {
+        const profileCard = document.createElement('div');
+        profileCard.className = 'user-card';
+        profileCard.innerHTML = `
+          <div class="user-info">
+            <div class="avatar-icon">👤</div>
+            <div class="user-name">${profile.name}</div>
+          </div>
+          <div class="user-actions">
+            <button class="action-btn" onclick="editProfile(${index})">Editar</button>
+            <button class="action-btn" onclick="deleteProfile(${index})">Eliminar</button>
+          </div>
+        `;
+        container.appendChild(profileCard);
+      });
+    }
+
+
+  </script>
     
 </body>
 </html>
