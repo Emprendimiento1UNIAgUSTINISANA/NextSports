@@ -22,5 +22,39 @@
   </section>
 
   <main id="comentarios-container" class="comentarios-container"></main>
+
+  <script>
+    function agregarComentario() {
+  const container = document.getElementById('comentarios-container');
+
+  const comentario = document.createElement('div');
+  comentario.className = 'comentario-card';
+
+  comentario.innerHTML = `
+    <img src="/NextSports-main/dev/assets/user-icon.svg" alt="perfil" />
+    <div class="comentario-info">
+      <h4>Javier Alejandro Torres</h4>
+      <p class="texto-comentario">Este es mi comentario, la aplicación es muy buena.</p>
+      <div class="card-actions">
+        <button class="centro">Centro</button>
+        <button class="eliminar">Eliminar</button>
+        <button class="editar">Editar</button>
+      </div>
+    </div>
+  `;
+
+
+  comentario.querySelector('.editar').addEventListener('click', () => {
+    const nuevoTexto = prompt("Edita tu comentario:", comentario.querySelector('.texto-comentario').textContent);
+    if (nuevoTexto) {
+      comentario.querySelector('.texto-comentario').textContent = nuevoTexto;
+    }
+  });
+
+  comentario.querySelector('.centro').addEventListener('click', () => {
+    alert("Función Centro no implementada aún.");
+  });
+}
+  </script>
 </body>
 </html>
