@@ -43,6 +43,12 @@
     </div>
   `;
 
+  container.appendChild(comentario);
+
+  // Funcionalidad de botones
+  comentario.querySelector('.eliminar').addEventListener('click', () => {
+    comentario.remove();
+  });
 
   comentario.querySelector('.editar').addEventListener('click', () => {
     const nuevoTexto = prompt("Edita tu comentario:", comentario.querySelector('.texto-comentario').textContent);
