@@ -55,6 +55,22 @@
         container.appendChild(profileCard);
       });
     }
+        // Función para agregar un perfil
+    function addProfile(name) {
+      profiles.push({ name });
+      localStorage.setItem('profiles', JSON.stringify(profiles));
+      displayProfiles();
+    }
+
+    // Función para editar un perfil
+    function editProfile(index) {
+      const newName = prompt("Edita el nombre del perfil:", profiles[index].name);
+      if (newName) {
+        profiles[index].name = newName;
+        localStorage.setItem('profiles', JSON.stringify(profiles));
+        displayProfiles();
+      }
+    }
 
 
   </script>
