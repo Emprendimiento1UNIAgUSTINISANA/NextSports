@@ -11,95 +11,99 @@
     <button class="back-btn" onclick="history.back()">← Volver</button>
     <h1>Perfil</h1>
   </header>
+
   <main>
     <section class="profile-card">
       <h2 class="profile-name">Nombre</h2>
       <p class="profile-email">correo@ejemplo.com</p>
     </section>
+
+    <section class="section-group">
+      <h3 class="section-title">Cuenta</h3>
+
+      <div class="option-card">
+        <div class="option-icon dollar-icon">
+          <span class="icon-placeholder">
+            <img src="/dev/assets/dollar-icon.svg" alt="dollar-icon">
+          </span>
+        </div>
+        <div class="option-text">Opciones de Pago</div>
+        <div class="option-arrow">
+          <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
+        </div>
+      </div>
+
+      <div class="option-card">
+        <div class="option-icon notification-icon">
+          <span class="icon-placeholder">
+            <img src="/dev/assets/notification-icon.svg" alt="notification-icon">
+          </span>
+        </div>
+        <div class="option-text">Notificaciones</div>
+        <div class="option-arrow">
+          <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
+        </div>
+      </div>
+
+      <div class="option-card" onclick="window.location.href='/dev/views/profile2.html'" style="cursor: pointer;">
+        <div class="option-icon user-icon">
+          <span class="icon-placeholder">
+            <img src="/dev/assets/user-icon.svg" alt="user-icon">
+          </span>
+        </div>
+        <div class="option-text">Perfil</div>
+        <div class="option-arrow">
+          <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
+        </div>
+      </div>
+    </section>
+
+    <section class="section-group">
+      <h3 class="section-title">General</h3>
+
+      <div class="option-card">
+        <div class="option-icon comment-icon">
+          <span class="icon-placeholder">
+            <img src="/dev/assets/supoport-icon.svg" alt="comment-icon">
+          </span>
+        </div>
+        <div class="option-text">Soporte</div>
+        <div class="option-arrow">
+          <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
+        </div>
+      </div>
+
+      <div class="option-card">
+        <div class="option-icon security-icon">
+          <span class="icon-placeholder">
+            <img src="/dev/assets/ToS-icon.svg" alt="ToS-icon">
+          </span>
+        </div>
+        <div class="option-text">Términos de Servicio</div>
+        <div class="option-arrow">
+          <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
+        </div>
+      </div>
+
+      <button id="logout-btn">Cerrar Sesión</button>
+    </section>
   </main>
-  <script src="/dev/javascript/profile.js"></script>
 
-        <section class="section-group">
-            <h3 class="section-title">Cuenta</h3>
-            
-            <div class="option-card">
-                <div class="option-icon dollar-icon">
-                    <span class="icon-placeholder">
-                        <img src="/dev/assets/dollar-icon.svg" alt="dollar-icon">
-                    </span>
-                </div>
-                <div class="option-text">Opciones de Pago</div>
-                <div class="option-arrow">
-                    <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
-                </div>
-            </div>
-
-            <div class="option-card">
-                <div class="option-icon notification-icon">
-                    <span class="icon-placeholder">
-                        <img src="/dev/assets/notification-icon.svg" alt="notification-icon">
-                    </span>
-                </div>
-                <div class="option-text">Notificaciones</div>
-                <div class="option-arrow">
-                    <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
-                </div>
-            </div>
-
-            <div class="option-card" onclick="window.location.href='/dev/views/profile2.html'" style="cursor: pointer;">
-                <div class="option-icon user-icon">
-                    <span class="icon-placeholder">
-                        <img src="/dev/assets/user-icon.svg" alt="user-icon">
-                    </span>
-                </div>
-                <div class="option-text">Perfil</div>
-                <div class="option-arrow">
-                    <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
-                </div>
-            </div>
-        </section>
-
-        <section class="section-group">
-            <h3 class="section-title">General</h3>
-            
-            <div class="option-card">
-                <div class="option-icon comment-icon">
-                    <span class="icon-placeholder">
-                        <img src="/dev/assets/supoport-icon.svg" alt="comment-icon">
-                    </span>
-                </div>
-                <div class="option-text">Soporte</div>
-                <div class="option-arrow">
-                    <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
-                </div>
-            </div>
-
-            <div class="option-card">
-                <div class="option-icon security-icon">
-                    <span class="icon-placeholder">
-                        <img src="/dev/assets/ToS-icon.svg" alt="ToS-icon">
-                    </span>
-                </div>
-                <div class="option-text">Terminos de Servicio</div>
-                <div class="option-arrow">
-                    <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
-                </div>
-            </div>
-            <button id="logout-btn">Cerrar Sesión</button>
-        </section>
-    </main>
-</body>
-<script>
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (!user) window.location.href = '/dev/views/logpage.html';
-    document.querySelector('.profile-name').textContent = user.name;
-    document.querySelector('.profile-email').textContent = user.email;
-  
-    // Cerrar sesión
-    document.getElementById('logout-btn').addEventListener('click', () => {
-      localStorage.removeItem('user');
+  <script>
+    const user = JSON.parse(localStorage.getItem('sessionUser'));
+    if (!user) {
+      alert("Debes iniciar sesión.");
       window.location.href = '/dev/views/logpage.html';
+    } else {
+      document.querySelector('.profile-name').textContent = user.name;
+      document.querySelector('.profile-email').textContent = user.email;
+    }
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.removeItem('sessionUser');
+      alert("Sesión cerrada.");
+      window.location.href = '/index.html';
     });
   </script>
-  
+</body>
 </html>
