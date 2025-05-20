@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Administrador</title>
-    <link rel="stylesheet" href="/dev/styles/homeStyles.css">
-    <link rel="stylesheet" href="/dev/styles/adminStyles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administrador</title>
+  <link rel="stylesheet" href="/dev/styles/homeStyles.css">
+  <link rel="stylesheet" href="/dev/styles/adminStyles.css">
 </head>
 <body>
-      <!-- Header agregado -->
+  <!-- Header -->
   <header class="main-header">
     <h1>Panel de Administrador</h1>
-    <div id="admin-name">👤 Arrendatario</div> 
+    <div id="admin-name">👤 Administrador</div> 
     <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
   </header>
-    <!-- Contenido principal -->
+
+  <!-- Contenido principal -->
   <div class="container">
     <div class="user-card">
       <div class="user-icon">👤</div>
-      <div class="user-role">Arrendatario</div>
+      <div class="user-role">Administrador</div>
       <div class="buttons">
         <button onclick="salir()">Salir</button>
         <button onclick="mostrarNotificaciones()">Notificaciones</button>
       </div>
     </div>
-    
+
     <div class="icon-grid">
       <div class="icon-box" onclick="perfil()">
         <span>👤</span>
@@ -40,33 +41,28 @@
       </div>
     </div>
   </div>
-<script src="/dev/javascript/admin.js"></script>
+
+  <script src="/dev/javascript/admin.js"></script>
   <script>
-    
     document.addEventListener('DOMContentLoaded', () => {
-      const user = JSON.parse(localStorage.getItem('user'));
-      if (!user || !(user.name === 'admin' && user.email === 'admin@example.com')) {
+      const user = JSON.parse(localStorage.getItem('sessionUser'));
+      if (!user || user.rol !== 'administrador') {
         alert('Debes iniciar sesión como administrador.');
-        window.location.href = '/dev/views/logpage.html'; // Redirigir al inicio si no está autenticado
+        window.location.href = '/dev/views/logpage.html';
       } else {
-        document.getElementById('admin-name').textContent = user.name; // Mostrar el nombre del administrador
+        document.getElementById('admin-name').textContent = `👤 ${user.name}`;
       }
     });
-        
-    function logout() {
-      localStorage.removeItem('user'); 
-      alert("Sesión cerrada."); 
-      window.location.href = '/dev/views/logpage.html'; 
-    }
-      
+
     function salir() {
-      
       alert("Saliendo...");
     }
-        function mostrarNotificaciones() {
+
+    function mostrarNotificaciones() {
       alert("Mostrando notificaciones...");
     }
-        function perfil() {
+
+    function perfil() {
       window.location.href = '/dev/views/perfilAdmin.html';
     }
 
@@ -80,9 +76,7 @@
 
     function ayuda() {
       window.location.href = '/dev/views/serviciotecnicoAdmin.html';
-    }
-
-
+    }
   </script>
 </body>
 </html>
