@@ -16,6 +16,8 @@
     <section class="profile-card">
       <h2 class="profile-name">Nombre</h2>
       <p class="profile-email">correo@ejemplo.com</p>
+      <p class="profile-role">Rol: Usuario</p>
+      <p class="profile-date">Registrado el: 2024-01-01</p>
     </section>
 
     <section class="section-group">
@@ -97,6 +99,10 @@
     } else {
       document.querySelector('.profile-name').textContent = user.name;
       document.querySelector('.profile-email').textContent = user.email;
+      document.querySelector('.profile-role').textContent = `Rol: ${user.rol}`;
+      document.querySelector('.profile-date').textContent = user.fecha_creacion 
+        ? `Registrado el: ${new Date(user.fecha_creacion).toLocaleDateString('es-CO')}` 
+        : 'Fecha de registro no disponible';
     }
 
     document.getElementById('logout-btn').addEventListener('click', () => {

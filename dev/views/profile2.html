@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/dev/img/Vector.svg" type="/imagenes">
+    <link rel="icon" href="/dev/img/Vector.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/dev/styles/profile2.css">
     <title>Mi Perfil</title>
 </head>
@@ -39,8 +39,9 @@
     </main>
 
     <script>
-        const user = JSON.parse(localStorage.getItem('user'));
+        const user = JSON.parse(localStorage.getItem('sessionUser'));
         if (!user) {
+            alert("Debes iniciar sesión.");
             window.location.href = '/dev/views/logpage.html';
         } else {
             document.getElementById('user-name').textContent = user.name;
