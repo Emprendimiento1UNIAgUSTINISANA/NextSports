@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!user || user.rol !== 'administrador') {
     alert('Acceso denegado. Debes iniciar sesión como administrador.');
-    window.location.href = '/dev/index.html';
+    window.location.href = '/index.html'; // Ruta corregida
   }
 });
 
-// Función para cerrar sesión (puedes llamarla desde un botón con onclick="logout()")
+// Función para cerrar sesión (llamada desde el botón)
 function logout() {
   localStorage.removeItem('sessionUser');
   alert("Sesión cerrada.");
-  window.location.href = '/dev/index.html';
+  window.location.href = '/index.html'; // Ruta corregida
 }
