@@ -42,14 +42,13 @@
     </div>
   </div>
 
+  <!-- Scripts -->
   <script src="/dev/javascript/admin.js"></script>
   <script>
+    // Solo actualiza el nombre visualmente (la validación de sesión ya está en admin.js)
     document.addEventListener('DOMContentLoaded', () => {
       const user = JSON.parse(localStorage.getItem('sessionUser'));
-      if (!user || user.rol !== 'administrador') {
-        alert('Debes iniciar sesión como administrador.');
-        window.location.href = '/dev/views/logpage.html';
-      } else {
+      if (user) {
         document.getElementById('admin-name').textContent = `👤 ${user.name}`;
       }
     });
