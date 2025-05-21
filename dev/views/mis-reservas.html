@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Reservas - NextSports</title>
+  <link rel="stylesheet" href="/dev/styles/profileStyles.css">  <style>
+    /* Estilos específicos para la página de reservas */
+    .reservas-container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    
+    .reserva-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 25px;
+      margin-bottom: 20px;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-left: 4px solid #4CAF50;
+    }
+    
+    .reserva-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .reserva-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #E8F5E9;
+    }
+    
+    .reserva-header h3 {
+      font-size: 20px;
+      margin: 0;
+      color: #2E7D32;
+      font-weight: 600;
+    }
+    
+    .reserva-estado {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .estado-confirmada {
+      background: #E8F5E9;
+      color: #2E7D32;
+    }
+    
+    .estado-cancelada {
+      background: #FFEBEE;
+      color: #C62828;
+    }
+    
+    .estado-completada {
+      background: #E0F2F1;
+      color: #00796B;
+    }
+    
+    .estado-hoy {
+      background: #FFF8E1;
+      color: #F57F17;
+    }
+      .reserva-detalles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    
+    .detalle-item {
+      margin-bottom: 12px;
+    }
+    
+    .detalle-label {
+      font-weight: bold;
+      color: #388E3C;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+    
+    .reserva-acciones {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .btn-cancelar {
+      background: #FFEBEE;
+      color: #C62828;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(198, 40, 40, 0.2);
+    }
+    
+    .btn-cancelar:hover {
+      background: #FFCDD2;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(198, 40, 40, 0.3);
+    }
+    
+    .btn-cancelar i {
+      margin-right: 8px;
+    }
+    
+    .sin-reservas {
+      text-align: center;
+      padding: 60px 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      margin: 30px 0;
+    }
+    
+    .sin-reservas-icon {
+      font-size: 70px;
+      color: #A5D6A7;
+      margin-bottom: 20px;
+    }
+    
+    .btn-reservar {
+      background: linear-gradient(to bottom right, #00e676, #00c853);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: all 0.2s;
+      box-shadow: 0 2px 8px rgba(0, 200, 83, 0.4);
+    }
+    
+    .btn-reservar:hover {
+      background: linear-gradient(to bottom right, #00c853, #009624);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 200, 83, 0.5);
+    }
+    
+    .back-button {
+      display: flex;
+      align-items: center;
+      background: none;
+      border: none;
+      color: #555;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px 5px;
+    }
+    
+    .back-button i {
+      margin-right: 5px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <button class="back-button" onclick="history.back()">
+      <i class="fas fa-arrow-left"></i> Volver
+    </button>
+    <h1>Mis Reservas</h1>
+  </header>
+
+  <main class="reservas-container" id="mis-reservas">
+    <div class="loading">Cargando tus reservas...</div>
+  </main>
+
+  <script src="/dev/javascript/reservas.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Comprobar si el usuario está autenticado
+      const sessionUser = JSON.parse(localStorage.getItem('sessionUser'));
+      if (!sessionUser) {
+        alert('Debes iniciar sesión para ver tus reservas');
+        window.location.href = '/dev/views/logpage.html?redirect=mis-reservas';
+        return;
+      }
+      
+      // Cargar las reservas del usuario
+      cargarReservasUsuario();
+      
+      /**
+       * Carga las reservas del usuario actual
+       */
+      function cargarReservasUsuario() {
+        const container = document.getElementById('mis-reservas');
+        
+        // Obtener todas las reservas
+        const todasReservas = ReservasSystem.obtenerReservas();
+        
+        // Filtrar por el usuario actual
+        const misReservas = todasReservas.filter(r => r.emailUsuario === sessionUser.email);
+        
+        // Si no hay reservas, mostrar mensaje
+        if (misReservas.length === 0) {
+          container.innerHTML = `
+            <div class="sin-reservas">
+              <div class="sin-reservas-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <h3>No tienes reservas</h3>
+              <p>Aún no has realizado ninguna reserva. ¡Explora nuestras canchas y haz tu primera reserva!</p>
+              <button class="btn-reservar" onclick="window.location.href='/dev/views/reserva.html'">
+                Reservar ahora
+              </button>
+            </div>
+          `;
+          return;
+        }
+        
+        // Ordenar reservas (más recientes primero)
+        misReservas.sort((a, b) => new Date(b.fechaCreacion) - new Date(a.fechaCreacion));
+        
+        // Crear HTML para cada reserva
+        let html = '';
+        
+        misReservas.forEach(reserva => {
+          const cancha = ReservasSystem.obtenerCanchaPorId(reserva.idCancha);
+          
+          if (!cancha) {
+            return; // Si la cancha no existe, omitir esta reserva
+          }
+          
+          // Determinar estado de la reserva
+          const fechaReserva = new Date(reserva.fecha);
+          const hoy = new Date();
+          hoy.setHours(0, 0, 0, 0);
+          
+          let estado = reserva.estado;
+          let estadoClase = 'estado-confirmada';
+          
+          // Actualizar estado según la fecha
+          if (estado === 'confirmada') {
+            if (fechaReserva < hoy) {
+              estado = 'completada';
+              estadoClase = 'estado-completada';
+            } else if (fechaReserva.getTime() === hoy.getTime()) {
+              estado = 'hoy';
+              estadoClase = 'estado-hoy';
+            }
+          } else if (estado === 'cancelada') {
+            estadoClase = 'estado-cancelada';
+          }
+          
+          // Formatear fecha para mostrar
+          const fechaFormateada = fechaReserva.toLocaleDateString('es-ES', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          });
+          
+          html += `
+            <div class="reserva-card">
+              <div class="reserva-header">
+                <h3>${cancha.nombre}</h3>
+                <span class="reserva-estado ${estadoClase}">
+                  ${estado.charAt(0).toUpperCase() + estado.slice(1)}
+                </span>
+              </div>
+              
+              <div class="reserva-detalles">
+                <div class="detalle-item">
+                  <div class="detalle-label">Fecha</div>
+                  <div>${fechaFormateada}</div>
+                </div>
+                <div class="detalle-item">
+                  <div class="detalle-label">Hora</div>
+                  <div>${reserva.hora}:00 - ${reserva.hora + reserva.duracion}:00</div>
+                </div>
+                <div class="detalle-item">
+                  <div class="detalle-label">Ubicación</div>
+                  <div>${cancha.ubicacion}</div>
+                </div>
+                <div class="detalle-item">
+                  <div class="detalle-label">Precio</div>
+                  <div>$${reserva.precio.toLocaleString('es-ES')}</div>
+                </div>
+              </div>
+              
+              ${estado === 'confirmada' ? `
+                <div class="reserva-acciones">
+                  <button class="btn-cancelar" onclick="cancelarReserva(${reserva.id})">
+                    <i class="fas fa-times"></i> Cancelar reserva
+                  </button>
+                </div>
+              ` : ''}
+            </div>
+          `;
+        });
+        
+        container.innerHTML = html;
+      }
+      
+      // Función global para cancelar reserva (usada en los botones)
+      window.cancelarReserva = function(idReserva) {
+        if (confirm('¿Estás seguro de que deseas cancelar esta reserva?')) {
+          const resultado = ReservasSystem.cancelarReserva(idReserva);
+          
+          if (resultado) {
+            alert('Reserva cancelada correctamente');
+            cargarReservasUsuario(); // Recargar la página
+          } else {
+            alert('No fue posible cancelar la reserva');
+          }
+        }
+      };
+    });
+  </script>
+</body>
+</html>

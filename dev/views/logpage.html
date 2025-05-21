@@ -8,14 +8,22 @@
 </head>
 <body>
   <main class="container_log">
-    <img src="/dev/img/login-icon.svg" alt="logo NextSport" width="90%" height="300px" />
-
-    <!-- LOGIN -->
+    <img src="/dev/img/login-icon.svg" alt="logo NextSport" width="90%" height="300px" />    <!-- LOGIN -->
     <form id="login-form">
       <input type="text" id="correoLogin" name="correoLogin" required placeholder="Correo electrónico" />
       <input type="password" id="contraseñaLogin" name="contraseñaLogin" required placeholder="Contraseña" />
       <button type="submit">Iniciar Sesión</button>
       <p>¿No tienes cuenta? <a href="#" id="show-register">Regístrate</a></p>
+      <p><a href="#" id="forgot-password">¿Olvidaste tu contraseña?</a></p>
+    </form>
+    
+    <!-- RECUPERAR CONTRASEÑA -->
+    <form id="forgot-password-form" style="display: none;">
+      <h3>Recuperar contraseña</h3>
+      <p>Introduce tu correo electrónico y te enviaremos instrucciones para recuperar tu contraseña.</p>
+      <input type="email" id="recovery-email" name="recovery-email" required placeholder="Correo electrónico" />
+      <button type="submit">Recuperar contraseña</button>
+      <p><a href="#" id="back-to-login">Volver al inicio de sesión</a></p>
     </form>
 
     <!-- REGISTRO -->

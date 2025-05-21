@@ -5,109 +5,313 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perfil</title>
   <link rel="stylesheet" href="/dev/styles/profileStyles.css">
+  <style>
+    /* Estilos adicionales para reservas */
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      border-radius: 5px 5px 0 0;
+      margin-right: 5px;
+    }
+    
+    .tab.active {
+      background: #fff;
+      border-bottom: 1px solid #fff;
+      margin-bottom: -1px;
+      font-weight: bold;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .reserva-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .reserva-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .reserva-header h3 {
+      margin: 0;
+    }
+    
+    .reserva-estado {
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      font-weight: bold;
+    }
+    
+    .estado-confirmada {
+      background: #e3f2fd;
+      color: #1976d2;
+    }
+    
+    .estado-cancelada {
+      background: #ffebee;
+      color: #d32f2f;
+    }
+    
+    .estado-completada {
+      background: #e8f5e9;
+      color: #388e3c;
+    }
+    
+    .reserva-info p {
+      margin: 5px 0;
+    }
+    
+    .cancelar-reserva-btn {
+      background: #ffebee;
+      color: #d32f2f;
+      border: 1px solid #ffcdd2;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    
+    .form-row {
+      margin-bottom: 15px;
+    }
+    
+    .form-row label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    .form-row input, 
+    .form-row select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    button[type="submit"] {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    
+    button[type="submit"]:hover {
+      background: #45a049;
+    }
+    
+    .no-reservas {
+      text-align: center;
+      padding: 30px;
+      color: #757575;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
   <header>
     <button class="back-btn" onclick="history.back()">← Volver</button>
-    <h1>Perfil</h1>
+    <h1>Mi Perfil</h1>
   </header>
 
   <main>
     <section class="profile-card">
-      <h2 class="profile-name">Nombre</h2>
+      <h2 class="profile-name">Cargando...</h2>
       <p class="profile-email">correo@ejemplo.com</p>
       <p class="profile-role">Rol: Usuario</p>
       <p class="profile-date">Registrado el: 2024-01-01</p>
     </section>
-
-    <section class="section-group">
-      <h3 class="section-title">Cuenta</h3>
-
-      <div class="option-card">
-        <div class="option-icon dollar-icon">
-          <span class="icon-placeholder">
-            <img src="/dev/assets/dollar-icon.svg" alt="dollar-icon">
-          </span>
+    
+    <div class="tabs">
+      <div class="tab active" data-tab="info">Información</div>
+      <div class="tab" data-tab="reservas">Mis Reservas</div>
+      <div class="tab" data-tab="editar">Editar Perfil</div>
+    </div>    <!-- Tab Información -->
+    <div class="tab-content active" id="info-tab">
+      <section class="section-group">
+        <h3 class="section-title">Cuenta</h3>
+  
+        <div class="option-card">
+          <div class="option-icon dollar-icon">
+            <span class="icon-placeholder">
+              <img src="/dev/assets/dollar-icon.svg" alt="dollar-icon">
+            </span>
+          </div>
+          <div class="option-text">Opciones de Pago</div>
+          <div class="option-arrow">
+            <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
+          </div>
+        </div>        <div class="option-card">
+          <div class="option-icon notification-icon">
+            <span class="icon-placeholder">
+              <img src="/dev/assets/notification-icon.svg" alt="notification-icon">
+            </span>
+          </div>
+          <div class="option-text">Notificaciones</div>
+          <div class="option-arrow">
+            <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
+          </div>
         </div>
-        <div class="option-text">Opciones de Pago</div>
-        <div class="option-arrow">
-          <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
+        
+        <div class="option-card" onclick="window.location.href='/dev/views/mis-reservas.html'" style="cursor: pointer;">
+          <div class="option-icon">
+            <span class="icon-placeholder">
+              <i class="fas fa-calendar-alt" style="font-size: 24px; color: #4CAF50;"></i>
+            </span>
+          </div>
+          <div class="option-text">Mis Reservas</div>
+          <div class="option-arrow">
+            <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
+          </div>
         </div>
-      </div>
-
-      <div class="option-card">
-        <div class="option-icon notification-icon">
-          <span class="icon-placeholder">
-            <img src="/dev/assets/notification-icon.svg" alt="notification-icon">
-          </span>
+      </section>
+  
+      <section class="section-group">
+        <h3 class="section-title">General</h3>
+  
+        <div class="option-card">
+          <div class="option-icon comment-icon">
+            <span class="icon-placeholder">
+              <img src="/dev/assets/supoport-icon.svg" alt="comment-icon">
+            </span>
+          </div>
+          <div class="option-text">Soporte</div>
+          <div class="option-arrow">
+            <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
+          </div>
         </div>
-        <div class="option-text">Notificaciones</div>
-        <div class="option-arrow">
-          <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
+  
+        <div class="option-card">
+          <div class="option-icon security-icon">
+            <span class="icon-placeholder">
+              <img src="/dev/assets/ToS-icon.svg" alt="ToS-icon">
+            </span>
+          </div>
+          <div class="option-text">Términos de Servicio</div>
+          <div class="option-arrow">
+            <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
+          </div>
         </div>
-      </div>
-
-      <div class="option-card" onclick="window.location.href='/dev/views/profile2.html'" style="cursor: pointer;">
-        <div class="option-icon user-icon">
-          <span class="icon-placeholder">
-            <img src="/dev/assets/user-icon.svg" alt="user-icon">
-          </span>
+  
+        <button id="logout-btn">Cerrar Sesión</button>
+      </section>
+    </div>
+    
+    <!-- Tab Mis Reservas -->
+    <div class="tab-content" id="reservas-tab">
+      <section class="section-group">
+        <h3 class="section-title">Mis Reservas</h3>
+        <div id="reservas-container">
+          <p>Cargando reservas...</p>
         </div>
-        <div class="option-text">Perfil</div>
-        <div class="option-arrow">
-          <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
-        </div>
-      </div>
-    </section>
-
-    <section class="section-group">
-      <h3 class="section-title">General</h3>
-
-      <div class="option-card">
-        <div class="option-icon comment-icon">
-          <span class="icon-placeholder">
-            <img src="/dev/assets/supoport-icon.svg" alt="comment-icon">
-          </span>
-        </div>
-        <div class="option-text">Soporte</div>
-        <div class="option-arrow">
-          <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
-        </div>
-      </div>
-
-      <div class="option-card">
-        <div class="option-icon security-icon">
-          <span class="icon-placeholder">
-            <img src="/dev/assets/ToS-icon.svg" alt="ToS-icon">
-          </span>
-        </div>
-        <div class="option-text">Términos de Servicio</div>
-        <div class="option-arrow">
-          <img src="/dev/assets/more-arrow-button.svg" alt="more-arrow-button">
-        </div>
-      </div>
-
-      <button id="logout-btn">Cerrar Sesión</button>
-    </section>
+      </section>
+    </div>
+    
+    <!-- Tab Editar Perfil -->
+    <div class="tab-content" id="editar-tab">
+      <section class="section-group">
+        <h3 class="section-title">Actualizar Información</h3>
+        
+        <form id="profile-form">
+          <div class="form-row">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          
+          <div class="form-row">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" disabled>
+            <small>El correo no se puede cambiar, es tu identificador único</small>
+          </div>
+          
+          <div class="form-row">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono">
+          </div>
+          
+          <div class="form-row">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion">
+          </div>
+          
+          <div class="form-row">
+            <label for="password-actual">Contraseña actual (solo si deseas cambiarla)</label>
+            <input type="password" id="password-actual" name="password-actual">
+          </div>
+          
+          <div class="form-row">
+            <label for="password-nuevo">Nueva contraseña</label>
+            <input type="password" id="password-nuevo" name="password-nuevo">
+          </div>
+          
+          <div class="form-row">
+            <label for="password-confirm">Confirmar nueva contraseña</label>
+            <input type="password" id="password-confirm" name="password-confirm">
+          </div>
+          
+          <button type="submit">Actualizar perfil</button>
+        </form>
+      </section>
+    </div>
   </main>
 
+  <script src="/dev/javascript/reservas.js"></script>
+  <script src="/dev/javascript/perfiles.js"></script>
   <script>
+    // Verificar autenticación
     const user = JSON.parse(localStorage.getItem('sessionUser'));
     if (!user) {
       alert("Debes iniciar sesión.");
       window.location.href = '/dev/views/logpage.html';
-    } else {
-      document.querySelector('.profile-name').textContent = user.name;
-      document.querySelector('.profile-email').textContent = user.email;
-      document.querySelector('.profile-role').textContent = `Rol: ${user.rol}`;
-      document.querySelector('.profile-date').textContent = user.fecha_creacion 
-        ? `Registrado el: ${new Date(user.fecha_creacion).toLocaleDateString('es-CO')}` 
-        : 'Fecha de registro no disponible';
     }
 
+    // Gestión de las pestañas
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Activar pestaña
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Mostrar contenido
+        const tabName = this.getAttribute('data-tab');
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        document.getElementById(`${tabName}-tab`).classList.add('active');
+      });
+    });
+    
+    // Cerrar sesión
     document.getElementById('logout-btn').addEventListener('click', () => {
       localStorage.removeItem('sessionUser');
-      alert("Sesión cerrada.");
+      alert("Sesión cerrada correctamente.");
       window.location.href = '/index.html';
     });
   </script>
